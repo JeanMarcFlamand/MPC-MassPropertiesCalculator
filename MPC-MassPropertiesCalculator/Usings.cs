@@ -1,0 +1,1 @@
+﻿global using static MPC_MassPropertiesCalculator.ConsoleMainMenu;
