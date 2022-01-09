@@ -1,4 +1,8 @@
-﻿namespace MPC_MassPropertiesCalculator;
+﻿
+
+
+
+namespace MPC_MassPropertiesCalculator;
 
 internal class ConsoleMainMenu
 {
@@ -21,12 +25,22 @@ internal class ConsoleMainMenu
         string? userfilepath;
         Console.Clear();
         Console.WriteLine("Enter File Path");
-        Console.WriteLine(@"Example C:\DataSample1.csv");
+        Console.WriteLine(@"Example D:\MPBC-MassPropertiesCalculator - Ref Docs\masspropsample.csv");
         userfilepath = Console.ReadLine();
-        //Todo Load file
-        FormatComment();
-        Console.WriteLine($"// Todo Load file {userfilepath}." + "\r\n");
-        Console.ResetColor(); // To return colors back
+               
+        if (userfilepath == "")
+        {
+            Console.WriteLine("File Path not supplied");
+        }
+        else
+        {
+            ReadCSV(userfilepath);
+            //Todo Display data in console
+            FormatComment();
+            Console.WriteLine($"// Todo - Display data in console {userfilepath}." + "\r\n");
+            Console.ResetColor(); // To return colors back
+        }       
+        
 
         Console.WriteLine("Press any key to main menu return." + "\r\n");
         Console.ReadLine();
@@ -74,5 +88,14 @@ internal class ConsoleMainMenu
     static void FormatComment()
     {
         Console.ForegroundColor = ConsoleColor.Green;
+    }
+    static void ReadCSV (string? path)
+    {
+        
+        using var reader = new StreamReader(path);
+        using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
+        var records = csv.GetRecords<Models.MassPropSample>().ToList();
+
+        Console.WriteLine($"the .csv file as {records.Count} Records");
     }
 }

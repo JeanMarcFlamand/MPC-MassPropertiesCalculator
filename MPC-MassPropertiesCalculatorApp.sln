@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.31911.260
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPC-MassPropertiesCalculator", "MPC-MassPropertiesCalculator\MPC-MassPropertiesCalculator.csproj", "{C661A9F2-2A79-4093-AC96-10FB90AF3ECD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MPC-MassPropertiesCalculator", "MPC-MassPropertiesCalculator\MPC-MassPropertiesCalculator.csproj", "{C661A9F2-2A79-4093-AC96-10FB90AF3ECD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SampleData", "SampleData", "{E644C0AC-E9D2-4075-AB7F-3B848BE5BBE9}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\MPBC-MassPropertiesCalculator - Ref Docs\masspropsample.csv = ..\..\MPBC-MassPropertiesCalculator - Ref Docs\masspropsample.csv
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
