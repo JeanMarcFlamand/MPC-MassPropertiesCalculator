@@ -11,8 +11,8 @@ The missing information may be the following fields.
   ## Roadmap:
   Here are the things I would like to accomplish:
  *  **Phase 1 - Minimum**
-  - [x] 1. Read data from a file. CSV
-     - [ ] 1.1 Display Data in Console
+  - [x] 1. Read data from a .csv file.
+     - [ ] 1.1 Display Data in Console.
   2. Make the calculations taking into account the missing information.
 
  * **Phase 2 - Nice to Have**
