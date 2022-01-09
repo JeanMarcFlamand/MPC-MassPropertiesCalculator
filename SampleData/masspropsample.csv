@@ -1,0 +1,6 @@
+﻿Item,PartNumber,Rev,NIC,Instance,Description,Type,Qty,UnitWeight,Xarm,Yarm,Zarm,PackageCode,ANDetail,DesingOwnerCode,MomentWithXarm,MomentWithYarm,MomentWithZarm,WeightWithoutXarm,WeightWithoutYarm,WeightWithoutZarm
+1,PartC,,,,Ducts,D,3,60,2,45,23,,,,,,,,,
+2,PartB,,,,Rivet,D,3,20,30,50,60,0,,,,,,,,
+3,PartA,,,,Bolt,D,2,25,10,20,30,0,,,,,,,,
+4,AssyC,-A,0,,Bracket Assy,A,1,173,,,,,,,,,,,,
+5,AssyB,-B,0,,Fitting Assy,A,1,10,,,,,,,,,,,,
