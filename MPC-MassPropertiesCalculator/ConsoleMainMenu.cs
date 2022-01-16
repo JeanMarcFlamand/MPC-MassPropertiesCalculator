@@ -2,11 +2,14 @@
 
 
 
+using Microsoft.Toolkit;
+using MPC_MassPropertiesCalculator.Models;
+
 namespace MPC_MassPropertiesCalculator;
 
 internal class ConsoleMainMenu
 {
-    public static void MainMenu()
+    static public void MainMenu()
     {
         string? optionnumber;
         Console.Clear();
@@ -37,7 +40,7 @@ internal class ConsoleMainMenu
             ReadCSV(userfilepath);
             //Todo Display data in console
             FormatComment();
-            Console.WriteLine($"// Todo - Display data in console {userfilepath}." + "\r\n");
+            Console.WriteLine($"// Todo - Make the calculations taking into account the missing information." + "\r\n");
             Console.ResetColor(); // To return colors back
         }       
         
@@ -79,9 +82,6 @@ internal class ConsoleMainMenu
                 Thread.Sleep(2000);
                 MainMenu();
                 break;
-
-
-
         }
 
     }
@@ -91,11 +91,61 @@ internal class ConsoleMainMenu
     }
     static void ReadCSV (string? path)
     {
-        
+
         using var reader = new StreamReader(path);
         using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
-        var records = csv.GetRecords<Models.MassPropSample>().ToList();
+        //Get the headers
+        csv.Read();
+        csv.ReadHeader();
+        string[] headerRow = csv.HeaderRecord;
 
-        Console.WriteLine($"the .csv file as {records.Count} Records");
+        //Print the header
+        ConsolePrintaTable.PrintRowSeperator();
+        DislplayHeanderWanted(headerRow);
+
+        //Read the Data - No header
+        var records = csv.GetRecords<Models.MassPropSample>().ToList();
+                
+        //Print the data
+        ConsolePrintaTable.PrintRowSeperator();
+        DisplayCSV(records);
+
     }
+    static void DisplayCSV(List<MassPropSample> massPropSamples)
+    {
+        foreach (MassPropSample? massPropSample in massPropSamples)
+        {
+            //Properties names of Class MassPropSample.cs
+            //item,PartNumber,Rev,NIC,Instance,Description,Type,
+            //Qty,UnitWeight,Xarm,Yarm,Zarm,PackageCode,ANDetail,DesingOwnerCode,MomentWithXarm,MomentWithYarm,MomentWithZarm,WeightWithoutXarm,WeightWithoutYarm,WeightWithoutZarm
+            // Trim Description to lenght of 10
+            string? descriptionTrimmed = massPropSample.Description.Truncate(11);
+
+            Console.WriteLine(string.Format($"| {massPropSample.Item,-10} |" +
+                $" {massPropSample.PartNumber,-10} |" +
+                $" {descriptionTrimmed,-11} |" +
+                $" {massPropSample.Qty,5:0} |" +
+                $" {massPropSample.UnitWeight,10:0} |" +
+                $" {massPropSample.Xarm,10:0.0} |" +
+                $" {massPropSample.Yarm,10:0.0} |" +
+                $" {massPropSample.Zarm,10:0.0} |"));
+
+            ConsolePrintaTable.PrintRowSeperator();
+        }
+        
+    }
+    static void DislplayHeanderWanted(string[] header)
+    {
+        Console.WriteLine(string.Format($"| {header[0],-10} |" +
+                $" {header[1],-10} |" +
+                $" {header[5],-11} |" +
+                $" {header[7],-5} |" +
+                $" {header[8],-5} |" +
+                $" {header[9],-10} |" +
+                $" {header[10],-10} |" +
+                $" {header[11],-10} |"));
+
+    }
+
 }
+
