@@ -23,6 +23,11 @@ internal class ConsoleMainMenu
         Console.WriteLine("Enter File Path");
         Console.WriteLine(@"Example D:\MPBC-MassPropertiesCalculator - Ref Docs\masspropsample.csv");
         userfilepath = Console.ReadLine();
+        while(!File.Exists(userfilepath))
+        {
+            Console.WriteLine("Please enter a valid file path:");
+            userfilepath = Console.ReadLine();
+        }    
                
         if (userfilepath == "")
         {
