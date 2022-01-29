@@ -102,7 +102,7 @@ internal class ConsoleMainMenu
         ConsolePrintaTable.DisplayHeanderWanted(headerRow);
 
         //Read the Data - No header
-        var records = csv.GetRecords<Models.MassPropSample>().ToList();
+        var records = csv.GetRecords<Models.MassPropItem>().ToList();
                 
         //Print the data
         ConsolePrintaTable.PrintRowSeperator();

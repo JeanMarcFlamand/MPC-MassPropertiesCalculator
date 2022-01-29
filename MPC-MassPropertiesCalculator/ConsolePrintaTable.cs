@@ -14,9 +14,9 @@ class ConsolePrintaTable
   {
       Console.WriteLine(new string ('_',_tableWidth) );
   }
-    static public void DisplayCSV(List<MassPropSample> massPropSamples)
+    static public void DisplayCSV(List<MassPropItem> massPropSamples)
     {
-        foreach (MassPropSample? massPropSample in massPropSamples)
+        foreach (MassPropItem? massPropSample in massPropSamples)
         {
             //Properties names of Class MassPropSample.cs
             //item,PartNumber,Rev,NIC,Instance,Description,Type,

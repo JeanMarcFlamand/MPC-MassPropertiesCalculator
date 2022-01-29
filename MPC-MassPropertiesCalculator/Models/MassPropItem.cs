@@ -1,5 +1,5 @@
 ﻿namespace MPC_MassPropertiesCalculator.Models;
-class MassPropSample
+class MassPropItem
 {           
     public int? Item { get; set; }
     public string? PartNumber { get; set; }
@@ -24,6 +24,19 @@ class MassPropSample
     public double? WeightWithoutZarm { get; set; }
 
 
+    private double? _myVar;
+
+    public double? XmomentTest
+    {
+        get { return Moment(UnitWeight,Qty,Xarm); }
+        set { _myVar = value; }
+    }
+
+
+    static public double? Moment(double? weight, double? qty,double? arm)
+    {
+        return weight*qty*arm;
+    }
 
 
 }
