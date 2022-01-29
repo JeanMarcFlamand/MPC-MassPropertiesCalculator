@@ -1,5 +1,5 @@
 ﻿namespace MPC_MassPropertiesCalculator.Models;
-class MassPropItem
+public class MassPropItem
 {           
     public int? Item { get; set; }
     public string? PartNumber { get; set; }
@@ -16,27 +16,84 @@ class MassPropItem
     public string? PackageCode { get; set; }
     public string? ANDetail { get; set; }
     public string? DesingOwnerCode { get; set; }
-    public double? MomentWithXarm { get; set; }
-    public double? MomentWithYarm { get; set; }
-    public double? MomentWithZarm { get; set; }
-    public double? WeightWithoutXarm { get; set; }
-    public double? WeightWithoutYarm { get; set; }
-    public double? WeightWithoutZarm { get; set; }
 
+    private double? _momentWithXarm;
 
-    private double? _myVar;
-
-    public double? XmomentTest
+    public double? MomentWithXarm
     {
-        get { return Moment(UnitWeight,Qty,Xarm); }
-        set { _myVar = value; }
+        get { return _momentWithXarm; }
+        set {
+            if (Xarm != null)
+            {
+                _momentWithXarm = UnitWeight*Qty*Xarm;
+            }
+            
+        }
     }
 
+    private double? _momentWithYarm;
 
-    static public double? Moment(double? weight, double? qty,double? arm)
+    public double? MomentWithYarm
     {
-        return weight*qty*arm;
+        get { return _momentWithYarm; }
+        set {
+            if (Yarm != null)
+            {
+                _momentWithYarm = UnitWeight * Qty * Yarm;
+            }
+        }
     }
 
+    private double? _momentWithZarm;
+
+    public double? MomentWithZarm
+    {
+        get { return _momentWithZarm; }
+        set {
+            if (Zarm != null)
+            {
+                _momentWithZarm = UnitWeight * Qty * Zarm;
+            }
+        }
+    }
+
+    private double? _weightWithOutXarm;
+
+    public double? WeightWithOutXarm
+    {
+        get { return _weightWithOutXarm; }
+        set {
+            if (Xarm is null)
+            {
+                _momentWithXarm = UnitWeight * Qty;
+            }
+        }
+    }
+
+    private double? _weightWithOutYarm;
+
+    public double? WeightWithOutYarm
+    {
+        get { return _weightWithOutYarm; }
+        set {
+            if (Yarm is null)
+            {
+                _weightWithOutYarm = UnitWeight * Qty;
+            }
+        }
+    }
+
+    private double? _weightWithOutZarm;
+
+    public double? WeightWithOutZarm
+    {
+        get { return _weightWithOutZarm; }
+        set {
+            if (Yarm is null)
+            {
+                _weightWithOutZarm = UnitWeight * Qty;
+            }
+        }
+    }
 
 }
