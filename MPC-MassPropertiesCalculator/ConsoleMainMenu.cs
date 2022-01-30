@@ -2,7 +2,7 @@
 
 namespace MPC_MassPropertiesCalculator;
 
-internal class ConsoleMainMenu
+public class ConsoleMainMenu
 {
     static public void MainMenu()
     {
@@ -111,9 +111,12 @@ internal class ConsoleMainMenu
         ConsolePrintaTable.DisplayCSV(records);
 
         Console.WriteLine("");
+        MassPropTotal massPropTotal = new MassPropTotal();
+        massPropTotal.GetMassPropTotal(records);
+
+        Console.WriteLine(massPropTotal.TotalWeight.ToString());
 
        
-
 
     }
     

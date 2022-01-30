@@ -7,31 +7,32 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace MPC_MassPropertiesCalculator;
-class ConsolePrintaTable
+public class ConsolePrintaTable
 {
+    
     private const int _tableWidth = 100;
     static public void PrintRowSeperator()
   {
       Console.WriteLine(new string ('_',_tableWidth) );
   }
-    static public void DisplayCSV(List<MassPropItem> massPropSamples)
+    static public void DisplayCSV(List<MassPropItem> massPropItems)
     {
-        foreach (MassPropItem? massPropSample in massPropSamples)
+        foreach (MassPropItem? massPropItem in massPropItems)
         {
             //Properties names of Class MassPropSample.cs
             //item,PartNumber,Rev,NIC,Instance,Description,Type,
             //Qty,UnitWeight,Xarm,Yarm,Zarm,PackageCode,ANDetail,DesingOwnerCode,MomentWithXarm,MomentWithYarm,MomentWithZarm,WeightWithoutXarm,WeightWithoutYarm,WeightWithoutZarm
             // Trim Description to lenght of 10
-            string? descriptionTrimmed = massPropSample.Description.Truncate(11);
+            string? descriptionTrimmed = massPropItem.Description.Truncate(11);
 
-            Console.WriteLine(string.Format($"| {massPropSample.Item,-10} |" +
-                $" {massPropSample.PartNumber,-10} |" +
+            Console.WriteLine(string.Format($"| {massPropItem.Item,-10} |" +
+                $" {massPropItem.PartNumber,-10} |" +
                 $" {descriptionTrimmed,-11} |" +
-                $" {massPropSample.Qty,5:0} |" +
-                $" {massPropSample.UnitWeight,10:0} |" +
-                $" {massPropSample.Xarm,10:0.0} |" +
-                $" {massPropSample.Yarm,10:0.0} |" +
-                $" {massPropSample.Zarm,10:0.0} |"));
+                $" {massPropItem.Qty,5:0} |" +
+                $" {massPropItem.UnitWeight,10:0} |" +
+                $" {massPropItem.Xarm,10:0.0} |" +
+                $" {massPropItem.Yarm,10:0.0} |" +
+                $" {massPropItem.Zarm,10:0.0} |"));
 
             ConsolePrintaTable.PrintRowSeperator();
         }

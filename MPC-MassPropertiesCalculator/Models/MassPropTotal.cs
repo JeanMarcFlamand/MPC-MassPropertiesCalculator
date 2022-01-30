@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MPC_MassPropertiesCalculator.Models;
-public class MassPropTotal
+﻿namespace MPC_MassPropertiesCalculator.Models;
+class MassPropTotal
 {
-    private List<MassPropItem> _massPropItems = new();
-
     private double? _totalWeight;
 
     public double? TotalWeight
@@ -88,9 +80,9 @@ public class MassPropTotal
         set { _weightWithOutZarm = value; }
     }
 
-    public void GetMassPropTotal()
+    public void GetMassPropTotal(List<MassPropItem> massPropItems)
     {
-        foreach (var item in _massPropItems)
+        foreach (var item in massPropItems)
         {
             _momentWithXarm += item.MomentWithXarm;
             _momentWithYarm +=  item.MomentWithYarm;
