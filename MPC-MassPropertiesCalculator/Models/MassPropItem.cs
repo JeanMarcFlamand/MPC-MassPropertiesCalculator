@@ -57,41 +57,41 @@ public class MassPropItem
         }
     }
 
-    private double? _weightWithOutXarm;
+    private double? _weightWithoutXarm;
 
-    public double? WeightWithOutXarm
+    public double? WeightWithoutXarm
     {
-        get { return _weightWithOutXarm; }
+        get { return _weightWithoutXarm; }
         set {
             if (Xarm is null)
             {
-                _momentWithXarm = UnitWeight * Qty;
+                _weightWithoutXarm = UnitWeight * Qty;
             }
         }
     }
 
-    private double? _weightWithOutYarm;
+    private double? _weightWithoutYarm;
 
-    public double? WeightWithOutYarm
+    public double? WeightWithoutYarm
     {
-        get { return _weightWithOutYarm; }
+        get { return _weightWithoutYarm; }
         set {
             if (Yarm is null)
             {
-                _weightWithOutYarm = UnitWeight * Qty;
+                _weightWithoutYarm = UnitWeight * Qty;
             }
         }
     }
 
-    private double? _weightWithOutZarm;
+    private double? _weightWithoutZarm;
 
-    public double? WeightWithOutZarm
+    public double? WeightWithoutZarm
     {
-        get { return _weightWithOutZarm; }
+        get { return _weightWithoutZarm; }
         set {
             if (Yarm is null)
             {
-                _weightWithOutZarm = UnitWeight * Qty;
+                _weightWithoutZarm = UnitWeight * Qty;
             }
         }
     }

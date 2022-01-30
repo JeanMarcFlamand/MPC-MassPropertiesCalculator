@@ -95,9 +95,9 @@ public class MassPropTotal
             _momentWithXarm += item.MomentWithXarm;
             _momentWithYarm +=  item.MomentWithYarm;
             _momentWithZarm +=  item.MomentWithZarm;
-            _weightWithOutXarm += item.WeightWithOutXarm;
-            _weightWithOutYarm += item.WeightWithOutYarm;
-            _weightWithOutZarm += item.WeightWithOutZarm;
+            _weightWithOutXarm += item.WeightWithoutXarm;
+            _weightWithOutYarm += item.WeightWithoutYarm;
+            _weightWithOutZarm += item.WeightWithoutZarm;
             _totalWeight += item.UnitWeight * item.Qty;
         }
 

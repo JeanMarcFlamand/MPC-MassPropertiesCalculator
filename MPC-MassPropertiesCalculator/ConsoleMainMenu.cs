@@ -1,4 +1,6 @@
-﻿namespace MPC_MassPropertiesCalculator;
+﻿using MPC_MassPropertiesCalculator.Models;
+
+namespace MPC_MassPropertiesCalculator;
 
 internal class ConsoleMainMenu
 {
@@ -107,6 +109,12 @@ internal class ConsoleMainMenu
         //Print the data
         ConsolePrintaTable.PrintRowSeperator();
         ConsolePrintaTable.DisplayCSV(records);
+
+        Console.WriteLine("");
+
+       
+
+
     }
     
 
