@@ -1,12 +1,22 @@
 ﻿namespace MPC_MassPropertiesCalculator.Models;
-class MassPropTotal
+public class MassPropTotal
 {
+    public MassPropTotal()
+    {
+        //Constructor
+        _totalWeight = 0;
+        _momentWithXarm = 0;
+        _momentWithYarm = 0;
+        _momentWithZarm = 0;
+        _weightWithOutXarm = 0;
+        _weightWithOutYarm = 0;
+        _weightWithOutZarm = 0;
+    }
     private double? _totalWeight;
 
     public double? TotalWeight
     {
-        get { return _totalWeight; }
-        set { _totalWeight = value; }
+        get { return _totalWeight; }        
     }
 
     private double? _xArm;
@@ -37,7 +47,6 @@ class MassPropTotal
     public double? MomentWithXarm
     {
         get { return _momentWithXarm; }
-        set { _momentWithXarm = value; }
     }
 
     private double? _momentWithYarm;
@@ -45,7 +54,6 @@ class MassPropTotal
     public double? MomentWithYarm
     {
         get { return _momentWithYarm; }
-        set { _momentWithYarm = value; }
     }
 
     private double? _momentWithZarm;
@@ -53,7 +61,6 @@ class MassPropTotal
     public double? MomentWithZarm
     {
         get { return _momentWithZarm; }
-        set { _momentWithZarm = value; }
     }
 
     private double? _weightWithOutXarm;
@@ -61,7 +68,6 @@ class MassPropTotal
     public double? WeightWithOutXarm
     {
         get { return _weightWithOutXarm; }
-        set { _weightWithOutXarm = value; }
     }
 
     private double? _weightWithOutYarm;
@@ -69,7 +75,6 @@ class MassPropTotal
     public double? WeighttWithOutYarm
     {
         get { return _weightWithOutYarm; }
-        set { _weightWithOutYarm = value; }
     }
 
     private double? _weightWithOutZarm;
@@ -77,12 +82,11 @@ class MassPropTotal
     public double? WeightWithOutZarm
     {
         get { return _weightWithOutZarm; }
-        set { _weightWithOutZarm = value; }
     }
 
     public void GetMassPropTotal(List<MassPropItem> massPropItems)
     {
-        foreach (var item in massPropItems)
+        foreach (MassPropItem? item in massPropItems)
         {
             _momentWithXarm += item.MomentWithXarm;
             _momentWithYarm +=  item.MomentWithYarm;
