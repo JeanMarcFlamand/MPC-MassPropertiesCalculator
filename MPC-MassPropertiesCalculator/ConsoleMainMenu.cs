@@ -114,9 +114,12 @@ public class ConsoleMainMenu
         MassPropTotal massPropTotal = new MassPropTotal();
         massPropTotal.GetMassPropTotal(records);
 
-        Console.WriteLine(massPropTotal.TotalWeight.ToString());
+        Console.WriteLine($"Total Weight : {massPropTotal.TotalWeight}");
+        Console.WriteLine($"Xarm :  {massPropTotal.Xarm}");
+        Console.WriteLine($"Yarm :  {massPropTotal.Yarm}");
+        Console.WriteLine($"Zarm :  {massPropTotal.Zarm}");
 
-       
+
 
     }
     
