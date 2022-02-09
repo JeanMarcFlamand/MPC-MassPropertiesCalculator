@@ -10,7 +10,7 @@ namespace MPC_MassPropertiesCalculator;
 public class ConsolePrintaTable
 {
     
-    private const int _tableWidth = 100;
+    private const int _tableWidth = 111;
     static public void PrintRowSeperator()
   {
       Console.WriteLine(new string ('_',_tableWidth) );
@@ -26,7 +26,7 @@ public class ConsolePrintaTable
             string? descriptionTrimmed = massPropItem.Description.Truncate(11);
 
             Console.WriteLine(string.Format($"| {massPropItem.Item,-10} |" +
-                $" {massPropItem.PartNumber,-10} |" +
+                $" {massPropItem.PartNumber,-20} |" +
                 $" {descriptionTrimmed,-11} |" +
                 $" {massPropItem.Qty,5:0} |" +
                 $" {massPropItem.UnitWeight,10:0} |" +
@@ -40,8 +40,9 @@ public class ConsolePrintaTable
     }
     static public void DisplayHeanderWanted(string[] header)
     {
-        Console.WriteLine(string.Format($"| {header[0],-10} |" +
-                $" {header[1],-10} |" +
+        Console.WriteLine(string.Format(
+                $"| {header[0],-10} |" +
+                $" {header[1],-20} |" +
                 $" {header[5],-11} |" +
                 $" {header[7],-5} |" +
                 $" {header[8],-5} |" +

@@ -23,7 +23,9 @@ public class ConsoleMainMenu
         string? userfilepath;
         Console.Clear();
         Console.WriteLine("Enter File Path");
-        Console.WriteLine(@"Example D:\MPBC-MassPropertiesCalculator - Ref Docs\masspropsample.csv");
+        Console.WriteLine(@"Example D:\MPBC-MassPropertiesCalculator - TestData\BOM MasspropCalc senario 01 - TWeightNot=0 and All CofG are defined (Basic Calcs).csv");
+        Console.WriteLine(@"Example D:\MPBC-MassPropertiesCalculator - TestData\BOM MasspropCalc senario 02 - TWeightNot=0 and Not All CofG are defined (Advanced Calcs).csv");
+        Console.WriteLine(@"Example D:\MPBC-MassPropertiesCalculator - TestData\BOM MasspropCalc senario 03 - TWeight=0  and All CofG are defined=0.csv");
         userfilepath = Console.ReadLine();
         while(!File.Exists(userfilepath))
         {
@@ -100,6 +102,7 @@ public class ConsoleMainMenu
         string[] headerRow = csv.HeaderRecord;
 
         //Print the header
+        
         ConsolePrintaTable.PrintRowSeperator();
         ConsolePrintaTable.DisplayHeanderWanted(headerRow);
 
@@ -115,10 +118,18 @@ public class ConsoleMainMenu
         massPropTotal.GetMassPropTotal(records);
 
         Console.WriteLine($"Total Weight : {massPropTotal.TotalWeight}");
-        Console.WriteLine($"Xarm :  {massPropTotal.Xarm}");
-        Console.WriteLine($"Yarm :  {massPropTotal.Yarm}");
-        Console.WriteLine($"Zarm :  {massPropTotal.Zarm}");
-
+        Console.WriteLine($"Xarm :  {massPropTotal.Xarm:F3}");
+        Console.WriteLine($"Yarm :  {massPropTotal.Yarm:F3}");
+        Console.WriteLine($"Zarm :  {massPropTotal.Zarm:F3}");
+        Console.WriteLine($"Weight with Xarm :  {massPropTotal.WeightWithXarm:F3}");
+        Console.WriteLine($"Weight with Yarm :  {massPropTotal.WeighttWithYarm:F3}");
+        Console.WriteLine($"Weight with Zarm :  {massPropTotal.WeightWithZarm:F3}");
+        Console.WriteLine($"Moment with Xarm :  {massPropTotal.MomentWithXarm:F3}");
+        Console.WriteLine($"Moment with Yarm :  {massPropTotal.MomentWithYarm:F3}");
+        Console.WriteLine($"Moment with Zarm :  {massPropTotal.MomentWithZarm:F3}");
+        Console.WriteLine($"Weight without Xarm :  {massPropTotal.TotalWeight - massPropTotal.WeightWithXarm:F3}");
+        Console.WriteLine($"Weight without Yarm :  {massPropTotal.TotalWeight - massPropTotal.WeighttWithYarm:F3}");
+        Console.WriteLine($"Weight without Zarm :  {massPropTotal.TotalWeight - massPropTotal.WeightWithZarm:F3}");
 
 
     }
