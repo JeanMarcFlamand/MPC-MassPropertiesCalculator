@@ -15,16 +15,16 @@ public class MassPropTotal
         YarmsHasValues = false;
         ZarmsHasValues = false;
     }
-
+    
     public bool XarmsHasValues { get; set; }
-    public bool YarmsHasValues { get;set; }
+    public bool YarmsHasValues { get; set; }
     public bool ZarmsHasValues { get; set; }
 
     private double? _totalWeight;
 
     public double? TotalWeight
     {
-        get { return _totalWeight; }        
+        get { return _totalWeight; }
     }
 
     private double? _xArm;
@@ -33,7 +33,7 @@ public class MassPropTotal
     {
         get { return _xArm; }
     }
-    
+
     private double? _yArm;
     public double? Yarm
     {
@@ -67,6 +67,23 @@ public class MassPropTotal
         get { return _zTotalMoment; }
     }
 
+    private double? _xArmForTotalMomentWithXarm;
+    public double? XArmTotalMomentWithXarm
+    {
+        get { return _xArmForTotalMomentWithXarm; }
+    }
+
+    private double? _yArmForTotalMomentWithYarm;
+    public double? YArmTotalMomentWithYarm
+    {
+        get { return _yArmForTotalMomentWithYarm; }
+    }
+
+    private double? _zArmForTotalMomentWithZarm;
+    public double? ZArmTotalMomentWithZarm
+    {
+        get { return _zArmForTotalMomentWithZarm; }
+    }
 
     private double? _momentWithXarm;
     public double? MomentWithXarm
@@ -102,7 +119,7 @@ public class MassPropTotal
         get { return _weightWithYarm; }
     }
 
-    
+
     private double? _weightWithZarm;
     public double? WeightWithZarm
     {
@@ -112,7 +129,7 @@ public class MassPropTotal
 
     public void GetMassPropTotal(List<MassPropItem> massPropItems)
     {
-                
+
         foreach (MassPropItem? item in massPropItems)
         {
             //verify if at least amrs (lever arms) fields contain value
@@ -143,6 +160,7 @@ public class MassPropTotal
 
             _totalWeight += item.UnitWeight * item.Qty;
         }
+
         //Get the Arms and Moments according all possible scenarios.
         if (XarmsHasValues)
         {
@@ -173,12 +191,15 @@ public class MassPropTotal
                 if (_weightWithXarm == 0)
                 {
                     _xArm = null;
-                    _yTotalMoment = null;
+                    _xTotalMoment = null;
+
                 }
                 else
                 {
                     _xArm = _momentWithXarm / _weightWithXarm;
                     _xTotalMoment = _momentWithXarm + (_totalWeight - _weightWithXarm) * _xArm;
+                    _xArmForTotalMomentWithXarm = _xArm;
+                    _xArm = null;
                 }
             }
 
@@ -187,7 +208,10 @@ public class MassPropTotal
         else
         {
             _xArm = null;
-            _xTotalMoment = null;   
+            _xTotalMoment = null;
+            _weightWithXarm = null;
+            _momentWithXarm = null;
+            _xArmForTotalMomentWithXarm = null;
         }
 
         if (YarmsHasValues)
@@ -227,6 +251,8 @@ public class MassPropTotal
                 {
                     _yArm = _momentWithYarm / _weightWithYarm;
                     _yTotalMoment = _momentWithYarm + (_totalWeight - _weightWithYarm) * _yArm;
+                    _yArmForTotalMomentWithYarm = _yArm;
+                    _yArm = null;
                 }
 
             }
@@ -237,6 +263,9 @@ public class MassPropTotal
         {
             _yArm = null;
             _yTotalMoment = null;
+            _weightWithYarm = null;
+            _momentWithYarm = null;
+            _yArmForTotalMomentWithYarm = null;
         }
 
         if (ZarmsHasValues)
@@ -275,6 +304,8 @@ public class MassPropTotal
                 {
                     _zArm = _momentWithZarm / _weightWithZarm;
                     _zTotalMoment = _momentWithZarm + (_totalWeight - _weightWithZarm) * _zArm;
+                    _zArmForTotalMomentWithZarm = _zArm;
+                    _zArm = null;
                 }
 
             }
@@ -285,6 +316,9 @@ public class MassPropTotal
         {
             _zArm = null;
             _zTotalMoment = null;
+            _weightWithZarm = null;
+            _momentWithZarm = null;
+            _zArmForTotalMomentWithZarm = null;
         }
     }
 
