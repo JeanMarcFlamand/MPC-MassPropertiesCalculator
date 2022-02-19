@@ -26,5 +26,5 @@ The missing information may be the following fields.
   - [ ] 3. Calculation of Inertias.
   - [ ] 4. Create a file that contains the changes made by the user.
 
-## Limitation
-* **This calculation method cannot be used as such in a recursive process involving a parent-child relationship**
+## Limitation / Warnings
+* **This calculation method was not tested in a recursive process involving a parent-child relationship**
