@@ -8,10 +8,11 @@ public class ConsoleMainMenu
     static public void MainMenu()
     {
         string? optionnumber;
-        Console.Clear();
+        //Console.Clear();
         Console.WriteLine("MPC- Mass Properties Calculator Menu" + "\r\n");
         Console.WriteLine("1: Load File");
-        Console.WriteLine("2: Exit");
+        Console.WriteLine("2: Clear the Screen");
+        Console.WriteLine("3: Exit");
         Console.WriteLine("Type the option number to navigate");
         optionnumber = Console.ReadLine();
 
@@ -19,42 +20,23 @@ public class ConsoleMainMenu
 
         MainMenu();
     }
-    static void LoadFile()
+
+    static void LoadfileFromDialog(DialogResult result)
     {
         string? userfilepath;
-        Console.Clear();
-        Console.WriteLine("Download test files from : https://github.com/JeanMarcFlamand/MPC-MassPropertiesCalculator/tree/main/ScenariosDataforTesting");
-        Console.WriteLine(@"Example D:\MPBC-MassPropertiesCalculator - TestData\BOM MasspropCalc senario 01 - TWeightNot=0 and All CofG are defined (Basic Calcs).csv");
-        Console.WriteLine(@"Example D:\MPBC-MassPropertiesCalculator - TestData\BOM MasspropCalc senario 02 - TWeightNot=0 and Not All CofG are defined (Advanced Calcs).csv");
-        Console.WriteLine(@"Example D:\MPBC-MassPropertiesCalculator - TestData\BOM MasspropCalc senario 03 - TWeight=0  and All CofG are defined.csv");
-        Console.WriteLine(@"Example D:\MPBC-MassPropertiesCalculator - TestData\BOM MasspropCalc senario 04 - TWeight=0  and Not All CofG are defined.csv");
-        Console.WriteLine(@"Example D:\MPBC-MassPropertiesCalculator - TestData\BOM MasspropCalc senario 05 - All CofG are not defined.csv");
-
-        userfilepath = Console.ReadLine();
-        while(!File.Exists(userfilepath))
+        if (result.IsOk)
         {
-            Console.WriteLine("Please enter a valid file path:");
-            userfilepath = Console.ReadLine();
-        }    
-               
-        if (userfilepath == "")
-        {
-            Console.WriteLine("File Path not supplied");
-        }
-        else
-        {
+            userfilepath = result.Path;
             ReadCSV(userfilepath);
             //Todo Display data in console
             FormatComment();
-            Console.WriteLine($"// Todo - Make the calculations taking into account the missing information." + "\r\n");
+            Console.WriteLine($"// Todo - Phase 1.3 Publish a demo console app with test files for those who have no programming knowledge." + "\r\n");
             Console.ResetColor(); // To return colors back
-        }       
-        
-
-        Console.WriteLine("Press any key to main menu return." + "\r\n");
-        Console.ReadLine();
+            MainMenu();
+        }
     }
-    static void Exit()
+
+       static void Exit()
     {
 
         string? yn;
@@ -76,9 +58,14 @@ public class ConsoleMainMenu
         switch (menuaction)
         {
             case "1":
-                LoadFile();
+                //LoadFile();
+                LoadfileFromDialog(Dialog.FileOpen("csv",null));
                 break;
             case "2":
+                Console.Clear();
+                MainMenu();
+                break;
+            case "3":
                 Exit();
                 break;
 
