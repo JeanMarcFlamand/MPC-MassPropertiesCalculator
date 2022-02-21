@@ -1,5 +1,4 @@
 ﻿using MPC_MassPropertiesCalculator.Models;
-using NativeFileDialogSharp;
 
 namespace MPC_MassPropertiesCalculator;
 
@@ -9,6 +8,10 @@ public class ConsoleMainMenu
     {
         string? optionnumber;
         //Console.Clear();
+
+        string? appVersion = GetAppReleaseVersion();
+
+        Console.WriteLine($"MPC- Mass Properties Calculator - Version {appVersion}" + "\r\n");
         Console.WriteLine("MPC- Mass Properties Calculator Menu" + "\r\n");
         Console.WriteLine("1: Load File");
         Console.WriteLine("2: Clear the Screen");
@@ -112,11 +115,11 @@ public class ConsoleMainMenu
         Console.WriteLine($"Xarm :  {massPropTotal.Xarm:F3}");
         Console.WriteLine($"Yarm :  {massPropTotal.Yarm:F3}");
         Console.WriteLine($"Zarm :  {massPropTotal.Zarm:F3}");
-        Console.WriteLine("Sub Calculation Results used:");
         Console.WriteLine($"Total Moment in Xarm :  {massPropTotal.XTotalMoment:F3}");
         Console.WriteLine($"Total Moment in Yarm :  {massPropTotal.YTotalMoment:F3}");
         Console.WriteLine($"Total Moment in Zarm :  {massPropTotal.ZTotalMoment:F3}");
 
+        Console.WriteLine("Sub Calculation Results used:");
         Console.WriteLine($"Total Weight with Xarm :  {massPropTotal.WeightWithXarm:F3}");
         Console.WriteLine($"Total Weight with Yarm :  {massPropTotal.WeighttWithYarm:F3}");
         Console.WriteLine($"Total Weight with Zarm :  {massPropTotal.WeightWithZarm:F3}");
@@ -131,7 +134,11 @@ public class ConsoleMainMenu
 
 
     }
-    
-
+    public static string? GetAppReleaseVersion()
+    {
+        var assemblyLocation = Assembly.GetExecutingAssembly().Location;
+        var appVersion = FileVersionInfo.GetVersionInfo(assemblyLocation).FileVersion;
+        return appVersion;
+    }
 }
 

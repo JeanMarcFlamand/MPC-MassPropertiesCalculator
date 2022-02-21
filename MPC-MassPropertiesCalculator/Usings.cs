@@ -4,3 +4,5 @@ global using System.Globalization;
 //global using System.Data;
 global using System.Linq;
 global using NativeFileDialogSharp;
+global using System.Diagnostics;
+global using System.Reflection;
