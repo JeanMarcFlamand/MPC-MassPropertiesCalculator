@@ -9,9 +9,9 @@ public class ConsoleMainMenu
         string? optionnumber;
         //Console.Clear();
 
-        string? appVersion = GetAppReleaseVersion();
+        //string? appVersion = GetAppReleaseVersion();
 
-        Console.WriteLine($"MPC- Mass Properties Calculator - Version {appVersion}" + "\r\n");
+        //Console.WriteLine($"MPC- Mass Properties Calculator - Version {appVersion}" + "\r\n");
         Console.WriteLine("MPC- Mass Properties Calculator Menu" + "\r\n");
         Console.WriteLine("1: Load File");
         Console.WriteLine("2: Clear the Screen");
@@ -26,7 +26,7 @@ public class ConsoleMainMenu
 
     static void LoadfileFromDialog(DialogResult result)
     {
-        string? userfilepath;
+        string userfilepath;
         if (result.IsOk)
         {
             userfilepath = result.Path;
@@ -85,7 +85,7 @@ public class ConsoleMainMenu
     {
         Console.ForegroundColor = ConsoleColor.Green;
     }
-    static void ReadCSV (string? path)
+    static void ReadCSV (string path)
     {
 
         using var reader = new StreamReader(path);
