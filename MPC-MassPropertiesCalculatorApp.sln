@@ -5,8 +5,6 @@ VisualStudioVersion = 17.1.31911.260
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MPC-MassPropertiesCalculator", "MPC-MassPropertiesCalculator\MPC-MassPropertiesCalculator.csproj", "{C661A9F2-2A79-4093-AC96-10FB90AF3ECD}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ScenariosDataforTesting", "ScenariosDataforTesting", "{E644C0AC-E9D2-4075-AB7F-3B848BE5BBE9}"
-EndProject
 Project("{C7167F0D-BC9F-4E6E-AFE1-012C56B48DB5}") = "MPC-Installer", "MPC-Installer\MPC-Installer.wapproj", "{74FF739C-3E07-4C38-8D01-273891F11315}"
 EndProject
 Global
