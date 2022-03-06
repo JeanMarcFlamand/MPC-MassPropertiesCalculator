@@ -10,6 +10,32 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="ScenariosDataforTesting\BOM MasspropCalc senario 01 - TWeightNot=0 and All CofG are defined %28Basic Calcs%29.csv" />
+    <None Remove="ScenariosDataforTesting\BOM MasspropCalc senario 02 - TWeightNot=0 and Not All CofG are defined %28Advanced Calcs%29.csv" />
+    <None Remove="ScenariosDataforTesting\BOM MasspropCalc senario 03 - TWeight=0  and All CofG are defined.csv" />
+    <None Remove="ScenariosDataforTesting\BOM MasspropCalc senario 04 - TWeight=0  and Not All CofG are defined.csv" />
+    <None Remove="ScenariosDataforTesting\BOM MasspropCalc senario 05 - TWeight=0  and All CofG are not defined.csv" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="ScenariosDataforTesting\BOM MasspropCalc senario 01 - TWeightNot=0 and All CofG are defined (Basic Calcs).csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ScenariosDataforTesting\BOM MasspropCalc senario 02 - TWeightNot=0 and Not All CofG are defined (Advanced Calcs).csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ScenariosDataforTesting\BOM MasspropCalc senario 03 - TWeight=0  and All CofG are defined.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ScenariosDataforTesting\BOM MasspropCalc senario 04 - TWeight=0  and Not All CofG are defined.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ScenariosDataforTesting\BOM MasspropCalc senario 05 - TWeight=0  and All CofG are not defined.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="CsvHelper" Version="27.2.1" />
     <PackageReference Include="Microsoft.Toolkit" Version="7.1.2" />
     <PackageReference Include="NativeFileDialogSharp" Version="0.5.0" />
