@@ -9,7 +9,7 @@ name: NET 6.0 CI
 on:
   push:
     branches:
-      -[MSIX-Installer]  # was master
+      - MSIX-Installer  
 
 jobs:
 
