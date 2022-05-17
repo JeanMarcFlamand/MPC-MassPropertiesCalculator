@@ -81,11 +81,3 @@ jobs:
     # Not used in a single-project msix scenario
     #- name: NuGet Restore Wapp Project
     #  run: nuget restore ${{ env.Wap_Project_Path }}
-    
-    # Decode the Base64 encoded Pfx
-    - name: Decode the Pfx
-      run: |
-        $pfx_cert_byte = [System.Convert]::FromBase64String("${{ secrets.Base64_Encoded_Pfx }}")
-        $currentDirectory = Get-Location
-        $certificatePath = Join-Path -Path $currentDirectory -ChildPath ${{ env.Signing_Certificate }}
-        [IO.File]::WriteAllBytes("$certificatePath", $pfx_cert_byte)
