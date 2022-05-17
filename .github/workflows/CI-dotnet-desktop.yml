@@ -24,10 +24,10 @@ jobs:
     env:
       App_Packages_Directory: AppPackages
       Signing_Certificate: GitHubActionsDemo.pfx
-      Solution_Path: GithubActionDemoConsoleApp.sln
-      # Test_Project_Path: GithubActionDemoConsoleApp.Tests\GithubActionDemoConsoleApp.Tests.csproj
-      Wpf_Project_Path: ConsoleDemoApp\ConsoleDemoApp.csproj
-      Appxmanifest_Path: ConsoleDemo.Installer\Package.appxmanifest
+      Solution_Path: MPC-MassPropertiesCalculatorApp.sln
+      # Test_Project_Path: MPC-MassPropertiesCalculatorApp.Tests\MPC-MassPropertiesCalculatorApp.Tests.csproj
+      Wpf_Project_Path: MPC-MassPropertiesCalculator\MPC-MassPropertiesCalculator.csproj
+      Appxmanifest_Path: MPC-MassPropertiesCalculator.Installer\Package.appxmanifest
       #Wap_Project_Directory: ConsoleDemo.Installer
       #Wap_Project_Name: ConsoleDemo.Installer.wapproj
       Actions_Allow_Unsecure_Commands: true # Allows AddPath and SetEnv commands
