@@ -103,7 +103,3 @@ jobs:
         AppxBundlePlatforms: x86|x64   # |arm|arm64
         SigningEnabled: false
         GenerateAppPackage: false
-
-    # Remove the .pfx
-    - name: Remove the .pfx
-      run: Remove-Item -path ${{ env.Signing_Certificate }}
