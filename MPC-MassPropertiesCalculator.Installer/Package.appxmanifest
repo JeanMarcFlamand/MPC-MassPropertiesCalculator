@@ -9,7 +9,7 @@
   <Identity
     Name="1c9b2a47-80a0-4e28-8dcb-df0db566d10b"
     Publisher="CN=Jean-Marc Flamand, O=Jean-Marc Flamand, S=Quebec, C=CA"
-    Version="1.0.0.0" />
+    Version="1.0.1.0" />
 
   <Properties>
     <DisplayName>MPC-Mass Properties Calculator - Installer</DisplayName>
