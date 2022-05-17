@@ -31,9 +31,3 @@ jobs:
       #Wap_Project_Directory: MPC-MassPropertiesCalculator.Installer
       #Wap_Project_Name: MPC-MassPropertiesCalculator.Installer.wapproj
       Actions_Allow_Unsecure_Commands: true # Allows AddPath and SetEnv commands
-
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-      with:
-        fetch-depth: 0 # avoid shallow clone so nbgv can do its work.
