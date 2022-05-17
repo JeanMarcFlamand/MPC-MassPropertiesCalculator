@@ -60,8 +60,3 @@ jobs:
         [xml]$manifest = get-content ".\${{ env.Appxmanifest_Path }}"
         $manifest.Package.Identity.Version = "$env:NBGV_SimpleVersion.0"
         $manifest.save(".\${{ env.Appxmanifest_Path }}")
-
-    - name: .NET Restore
-      run: dotnet restore ${{ env.Solution_Path }} --runtime $env:RuntimeIdentifier
-      env:
-        RuntimeIdentifier: win-x64
