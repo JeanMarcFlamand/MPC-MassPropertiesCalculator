@@ -20,3 +20,21 @@ jobs:
         targetplatform: [x64] # was [x86, x64]
 
     runs-on: windows-2022
+
+  env:
+        App_Packages_Directory: AppPackages
+        Signing_Certificate: GitHubActionsDemo.pfx
+        Solution_Path: MPC-MassPropertiesCalculatorApp.sln
+        # Test_Project_Path: MPC-MassPropertiesCalculatorApp.Tests\MPC-MassPropertiesCalculatorApp.Tests.csproj
+        Wpf_Project_Path: MPC-MassPropertiesCalculator\MPC-MassPropertiesCalculator.csproj
+        Appxmanifest_Path: MPC-MassPropertiesCalculator.Installer\Package.appxmanifest
+        #Wap_Project_Directory: ConsoleDemo.Installer
+        #Wap_Project_Name: ConsoleDemo.Installer.wapproj
+        Actions_Allow_Unsecure_Commands: true # Allows AddPath and SetEnv commands
+
+  steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # avoid shallow clone so nbgv can do its work.
+        
