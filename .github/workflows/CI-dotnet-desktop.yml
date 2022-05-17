@@ -65,19 +65,3 @@ jobs:
       run: dotnet restore ${{ env.Solution_Path }} --runtime $env:RuntimeIdentifier
       env:
         RuntimeIdentifier: win-x64
-
-    # Test
-    # - name: Execute Unit Tests
-    #- name: Execute Unit Tests
-    #  run: dotnet test ${{ env.Test_Project_Path }}
-
-    # Restore the application
-    - name:  Restore the Wpf application to populate the obj folder
-      run: msbuild ${{ env.Solution_Path }} /t:Restore /p:Configuration=$env:Configuration /p:RuntimeIdentifier=$env:RuntimeIdentifier
-      env:
-        Configuration: Release
-        RuntimeIdentifier: win-x64
-        
-    # Not used in a single-project msix scenario
-    #- name: NuGet Restore Wapp Project
-    #  run: nuget restore ${{ env.Wap_Project_Path }}
