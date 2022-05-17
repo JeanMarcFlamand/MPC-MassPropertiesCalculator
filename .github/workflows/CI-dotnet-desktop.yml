@@ -53,10 +53,3 @@ jobs:
     # Add  MsBuild to the PATH: https://github.com/microsoft/setup-msbuild
     - name: Setup MSBuild.exe
       uses: microsoft/setup-msbuild@v1.1
-
-    # Update the version before build
-    - name: Update manifest version
-      run: |
-        [xml]$manifest = get-content ".\${{ env.Appxmanifest_Path }}"
-        $manifest.Package.Identity.Version = "$env:NBGV_SimpleVersion.0"
-        $manifest.save(".\${{ env.Appxmanifest_Path }}")
