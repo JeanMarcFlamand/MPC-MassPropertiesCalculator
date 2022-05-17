@@ -3,7 +3,7 @@
 
 # This continuous integration pipeline is triggered anytime a user pushes code to the repo.
 # This pipeline builds the Wpf project, runs unit tests, then saves the MSIX build artifact.
-name: NET 6.0 CI (temporary)
+name: CI-dotnet-desktop
 
 # Trigger on every master branch push and pull request
 on:
