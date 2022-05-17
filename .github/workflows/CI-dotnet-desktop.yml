@@ -75,7 +75,7 @@ jobs:
     - name:  Restore the Wpf application to populate the obj folder
       run: msbuild ${{ env.Solution_Path }} /t:Restore /p:Configuration=$env:Configuration /p:RuntimeIdentifier=$env:RuntimeIdentifier
       env:
-        Configuration: Debug
+        Configuration: Release
         RuntimeIdentifier: win-x64
         
     # Not used in a single-project msix scenario
