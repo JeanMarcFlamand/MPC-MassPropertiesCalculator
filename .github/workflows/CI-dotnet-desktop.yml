@@ -17,7 +17,7 @@ jobs:
     # since MSIX cam bundle all target platforms, we don't need a matrix to build multiple TFMs
     strategy:
       matrix:
-        targetplatform: [x64] # was [x86, x64]
+        targetplatform: [x64]
 
     runs-on: windows-2022
 
