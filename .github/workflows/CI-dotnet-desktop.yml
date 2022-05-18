@@ -41,8 +41,8 @@ name: .NET 6.0 Desktop
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  # pull_request:
+  #  branches: [ main ]
 
 jobs:
 
@@ -59,7 +59,7 @@ jobs:
       Solution_Name: MPC-MassPropertiesCalculator.sln                         # Replace with your solution name, i.e. MyWpfApp.sln.
       #Test_Project_Path: your-test-project-path                 # Replace with the path to your test project, i.e. MyWpfApp.Tests\MyWpfApp.Tests.csproj.
       Wap_Project_Directory: MPC-MassPropertiesCalculator.Installer    # Replace with the Wap project directory relative to the solution, i.e. MyWpfApp.Package.
-      Wap_Project_Path: MPC-MassPropertiesCalculator.Installer.App.Package\MPC-MassPropertiesCalculator.Installer.Package.wapproj                   # Replace with the path to your Wap project, i.e. MyWpf.App.Package\MyWpfApp.Package.wapproj.
+      Wap_Project_Path: MPC-MassPropertiesCalculator.Installer\MPC-MassPropertiesCalculator.Installer.wapproj                   # Replace with the path to your Wap project, i.e. MyWpf.App.Package\MyWpfApp.Package.wapproj.
 
     steps:
     - name: Checkout
@@ -100,7 +100,7 @@ jobs:
       env:
         Appx_Bundle: Always
         Appx_Bundle_Platforms: x86|x64
-        Appx_Package_Build_Mode: StoreUpload
+        Appx_Package_Build_Mode: SideloadOnly
         Configuration: ${{ matrix.configuration }}
 
     # Remove the pfx
