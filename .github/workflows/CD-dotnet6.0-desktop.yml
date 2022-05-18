@@ -18,7 +18,7 @@ name:  NET 6.0 CD (temporary)
 on:
   push:
     branches:
-      - lance/net6-test-release
+      - main
 
 jobs:
 
