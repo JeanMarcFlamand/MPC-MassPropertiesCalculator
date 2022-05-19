@@ -18,8 +18,8 @@ name:  NET 6.0 CD (temporary)
 on:
   push:
     branches:
-      - main
-
+      #- main
+      - JMF-CD-ImplementationFailed
 jobs:
 
   build:
