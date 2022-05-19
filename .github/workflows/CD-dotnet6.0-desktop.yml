@@ -32,6 +32,7 @@ jobs:
       matrix:
         channel: [Prod_Sideload] # was [Dev, Prod_Sideload, Prod_Store]
         targetPlatform: [x64] # was  [x86, x64]
+        Configuration: [Release]  # added
         include:
 
           # includes the following variables for the matrix leg matching Dev
