@@ -32,7 +32,7 @@ jobs:
       matrix:
         channel: [Prod_Sideload] # was [Dev, Prod_Sideload, Prod_Store]
         targetPlatform: [x64] # was  [x86, x64]
-        Configuration: [Release]  # added
+        # Configuration: [Release]  # added
         include:
 
           # includes the following variables for the matrix leg matching Dev
@@ -88,10 +88,10 @@ jobs:
         setAllVars: true
 
     # Install the .NET Core workload
-    - name: Install .NET Core
+    - name: Install .NET 6
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: "6.0.300"
+        dotnet-version: "6.0.x"
 
     # Add  MsBuild to the PATH: https://github.com/microsoft/setup-msbuild
     - name: Setup MSBuild.exe
@@ -111,10 +111,16 @@ jobs:
 
     # Restore the application
     - name:  Restore the Wpf application to populate the obj folder
-      run: msbuild $env:Solution_Path /t:Restore /p:Configuration=$env:Configuration /p:RuntimeIdentifier=$env:RuntimeIdentifier
+      run: msbuild ${{ env.Solution_Path }} /t:Restore /p:Configuration=$env:Configuration /p:RuntimeIdentifier=$env:RuntimeIdentifier
       env:
-        Configuration: ${{ matrix.Configuration }}
-        RuntimeIdentifier: win-${{ matrix.targetplatform }}
+        Configuration: Release
+        RuntimeIdentifier: win-x64
+    # was
+    #- name:  Restore the Wpf application to populate the obj folder
+    #  run: msbuild $env:Solution_Path /t:Restore /p:Configuration=$env:Configuration /p:RuntimeIdentifier=$env:RuntimeIdentifier
+    #  env:
+    #    Configuration: ${{ matrix.Configuration }}
+    #    RuntimeIdentifier: win-${{ matrix.targetplatform }}
     
     - name: NuGet Restore Wapp Project
       run: nuget restore $env:WappProject_Path
