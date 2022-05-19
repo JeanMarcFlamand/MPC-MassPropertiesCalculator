@@ -68,7 +68,7 @@ jobs:
       with:
         fetch-depth: 0
 
-    # Install the .NET Core workload
+    # Install the .NET 6 workload
     - name: Install .NET 6.0
       uses: actions/setup-dotnet@v2
       with:
