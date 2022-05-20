@@ -110,17 +110,16 @@ jobs:
         $manifest.save(".\$env:Wap_Project_Directory\Package.appxmanifest")
 
     # Restore the application
-    - name:  Restore the Wpf application to populate the obj folder
-      run: msbuild ${{ env.Solution_Path }} /t:Restore /p:Configuration=$env:Configuration /p:RuntimeIdentifier=$env:RuntimeIdentifier
-      env:
-        Configuration: Release
-        RuntimeIdentifier: win-x64
-    # was
     #- name:  Restore the Wpf application to populate the obj folder
-    #  run: msbuild $env:Solution_Path /t:Restore /p:Configuration=$env:Configuration /p:RuntimeIdentifier=$env:RuntimeIdentifier
+    #  run: msbuild ${{ env.Solution_Path }} /t:Restore /p:Configuration=$env:Configuration /p:RuntimeIdentifier=$env:RuntimeIdentifier
     #  env:
-    #    Configuration: ${{ matrix.Configuration }}
-    #    RuntimeIdentifier: win-${{ matrix.targetplatform }}
+    #    Configuration: Release
+    #    RuntimeIdentifier: win-x64
+    - name:  Restore the Wpf application to populate the obj folder
+      run: msbuild $env:Solution_Path /t:Restore /p:Configuration=$env:Configuration /p:RuntimeIdentifier=$env:RuntimeIdentifier
+      env:
+        Configuration: ${{ matrix.Configuration }}
+        RuntimeIdentifier: win-${{ matrix.targetplatform }}
     
     - name: NuGet Restore Wapp Project
       run: nuget restore $env:WappProject_Path
