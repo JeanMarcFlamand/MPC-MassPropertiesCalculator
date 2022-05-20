@@ -97,24 +97,17 @@ jobs:
     - name: Setup MSBuild.exe
       uses: microsoft/setup-msbuild@v1.1
 
-    # Update the version before build
-    - name: Update manifest version
-      run: |
-        [xml]$manifest = get-content ".\${{ env.Appxmanifest_Path }}"
-        $manifest.Package.Identity.Version = "$env:NBGV_SimpleVersion.0"
-        $manifest.save(".\${{ env.Appxmanifest_Path }}")
-
     # Update the appxmanifest before build by setting the per-channel values set in the matrix such as
     # the Package.Identity.Version or the Package.Identity.Name, which allows multiple channels to be built.
-    #- name: Update manifest version
-    #  run: |
-    #    [xml]$manifest = get-content ".\$env:Wap_Project_Directory\Package.appxmanifest"
-    #    $manifest.Package.Identity.Version = "$env:NBGV_SimpleVersion.0"
-    #    $manifest.Package.Identity.Name = "${{ matrix.MsixPackageId }}"
-    #    $manifest.Package.Identity.Publisher = "${{ matrix.MsixPublisherId }}"
-    #    $manifest.Package.Properties.DisplayName = "${{ matrix.MsixPackageDisplayName }}"
-    #    $manifest.Package.Applications.Application.VisualElements.DisplayName = "${{ matrix.MsixPackageDisplayName }}"
-    #    $manifest.save(".\$env:Wap_Project_Directory\Package.appxmanifest")
+    - name: Update manifest version
+      run: |
+        [xml]$manifest = get-content ".\$env:Wap_Project_Directory\Package.appxmanifest"
+        $manifest.Package.Identity.Version = "$env:NBGV_SimpleVersion.0"
+        $manifest.Package.Identity.Name = "${{ matrix.MsixPackageId }}"
+        $manifest.Package.Identity.Publisher = "${{ matrix.MsixPublisherId }}"
+        $manifest.Package.Properties.DisplayName = "${{ matrix.MsixPackageDisplayName }}"
+        $manifest.Package.Applications.Application.VisualElements.DisplayName = "${{ matrix.MsixPackageDisplayName }}"
+        $manifest.save(".\$env:Wap_Project_Directory\Package.appxmanifest")
 
     # Restore the application
     - name:  Restore the Wpf application to populate the obj folder
