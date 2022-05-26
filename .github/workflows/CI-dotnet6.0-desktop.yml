@@ -133,4 +133,4 @@ jobs:
       with:
         name: MSIX Package
         # path: ${{ env.Wap_Project_Directory }}\AppPackages
-        path: $env:AppxPackageDir
+        path: ${{ env.GITHUB_ACTION_PATH }}\${{ env.App_Packages_Directory }}
