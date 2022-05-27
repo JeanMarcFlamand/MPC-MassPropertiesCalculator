@@ -49,9 +49,9 @@ jobs:
             Configuration: Release
             ChannelName: Prod_Sideload
             DistributionUrl: https://microsoft.github.io/github-actions-for-desktop-apps-distribution-prod
-            MsixPackageId: MyWPFApp.DevOpsDemo.ProdSideload
+            MsixPackageId: MPC-MassPropertiesCalculator.DevOpsDemo.ProdSideload
             MsixPublisherId: CN=GitHubActionsDemo
-            MsixPackageDisplayName: MyWPFApp (ProdSideload)
+            MsixPackageDisplayName: MPC-MassPropertiesCalculator (ProdSideload)
 
           # includes the following variables for the matrix leg matching Prod_Store
           #- channel: Prod_Store
