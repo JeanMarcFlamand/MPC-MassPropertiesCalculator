@@ -9,7 +9,7 @@
 # depending on which channel is being built.
 # Once the MSIX is created for each channel configuration, the agent archives the AppPackages folder, then creates
 # a Release with the specified git release tag. The archive is uploaded to the release as an asset for storage or distribution.
-name:  NET 6.0 CD (temporary)
+name:  CI.NET 6.0 Desktop
 
 # Trigger on any push with a git tag
 # To create a git tag, run the following commands on the branch you wish to release:
