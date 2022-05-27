@@ -68,7 +68,7 @@ jobs:
       with:
         fetch-depth: 0
 
-    # Install the .NET Core workload
+    # Install the .NET 6 workload
     - name: Install .NET 6.0
       uses: actions/setup-dotnet@v2
       with:
@@ -111,7 +111,7 @@ jobs:
         TargetPlatform: x64
         RuntimeIdentifier: win-x64
         AppxBundlePlatforms: x64  # x86|x64|arm|arm64
-        SigningEnabled: false
+        SigningEnabled: true
         GenerateAppPackage: true    
         
     # Create the app package by building and packaging the Windows Application Packaging project
