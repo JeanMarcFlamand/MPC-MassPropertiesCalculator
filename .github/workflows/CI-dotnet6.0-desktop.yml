@@ -40,10 +40,10 @@ name: CI.NET 6.0 Desktop
 
 on:
   push:
-    branches: [ main ]
+   branches:
   # pull_request:
   #  branches: [ main ]
-
+    - JMF-CD-ImplementationFailed
 jobs:
 
   build:
