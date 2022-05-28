@@ -97,7 +97,8 @@ jobs:
     - name: Decode the pfx
       run: |
         $pfx_cert_byte = [System.Convert]::FromBase64String("${{ secrets.Base64_Encoded_Pfx }}")
-        $certificatePath = Join-Path -Path $env:Wap_Project_Directory -ChildPath GitHubActionsWorkflow.pfx
+        $currentDirectory = Get-Location
+        $certificatePath = Join-Path -Path $currentDirectory -ChildPath $env:Wap_Project_Directory -AdditionalChildPath $env:SigningCertificate
         [IO.File]::WriteAllBytes("$certificatePath", $pfx_cert_byte)
 
     # Build and create MSIX package from https://github.com/microsoft/github-actions-for-desktop-apps/blob/lance/net6-update/.github/workflows/ci-net6-temp.yml
@@ -111,7 +112,7 @@ jobs:
         TargetPlatform: x64
         RuntimeIdentifier: win-x64
         AppxBundlePlatforms: x64  # x86|x64|arm|arm64
-        SigningEnabled: true
+        SigningEnabled: false
         GenerateAppPackage: true    
         
     # Create the app package by building and packaging the Windows Application Packaging project
