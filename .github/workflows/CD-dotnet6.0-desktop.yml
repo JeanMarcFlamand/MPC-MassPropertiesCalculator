@@ -48,9 +48,9 @@ jobs:
           - channel: Prod_Sideload
             Configuration: Release
             ChannelName: Prod_Sideload
-            DistributionUrl: https://microsoft.github.io/github-actions-for-desktop-apps-distribution-prod
+            DistributionUrl: https://https://github.com/JeanMarcFlamand/MPC-MassPropertiesCalculator/releases/Desktop.Console-
             MsixPackageId: MPC-MassPropertiesCalculator.DevOpsDemo.ProdSideload
-            MsixPublisherId: CN=GitHubActionsDemo
+            MsixPublisherId: CN=Jean-Marc Flamand
             MsixPackageDisplayName: MPC-MassPropertiesCalculator (ProdSideload)
 
           # includes the following variables for the matrix leg matching Prod_Store
@@ -67,7 +67,7 @@ jobs:
     env:
       App_Packages_Archive: AppPackages.zip
       App_Packages_Directory: AppPackages
-      SigningCertificate: GitHubActionsDemo.pfx
+      SigningCertificate: JeanMarcFlamand.pfx
       Solution_Path: MPC-MassPropertiesCalculatorApp.sln
       #Test_Project_Path: MyWpfApp.Tests\MyWpfApp.Tests.csproj
       Wpf_Project_Path: MPC-MassPropertiesCalculator\MMPC-MassPropertiesCalculator.csproj
