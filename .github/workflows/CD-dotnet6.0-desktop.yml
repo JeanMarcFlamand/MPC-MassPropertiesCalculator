@@ -9,7 +9,7 @@
 # depending on which channel is being built.
 # Once the MSIX is created for each channel configuration, the agent archives the AppPackages folder, then creates
 # a Release with the specified git release tag. The archive is uploaded to the release as an asset for storage or distribution.
-name:  NET 6.0 CD (temporary)
+name:  CD.NET 6.0 Desktop
 
 # Trigger on any push with a git tag
 # To create a git tag, run the following commands on the branch you wish to release:
@@ -48,10 +48,10 @@ jobs:
           - channel: Prod_Sideload
             Configuration: Release
             ChannelName: Prod_Sideload
-            DistributionUrl: https://microsoft.github.io/github-actions-for-desktop-apps-distribution-prod
-            MsixPackageId: MyWPFApp.DevOpsDemo.ProdSideload
-            MsixPublisherId: CN=GitHubActionsDemo
-            MsixPackageDisplayName: MyWPFApp (ProdSideload)
+            DistributionUrl: https://https://github.com/JeanMarcFlamand/MPC-MassPropertiesCalculator/releases/Desktop.Console-
+            MsixPackageId: MPC-MassPropertiesCalculator.DevOpsDemo.ProdSideload
+            MsixPublisherId: CN=Jean-Marc Flamand
+            MsixPackageDisplayName: MPC-MassPropertiesCalculator (ProdSideload)
 
           # includes the following variables for the matrix leg matching Prod_Store
           #- channel: Prod_Store
@@ -67,7 +67,7 @@ jobs:
     env:
       App_Packages_Archive: AppPackages.zip
       App_Packages_Directory: AppPackages
-      SigningCertificate: GitHubActionsDemo.pfx
+      SigningCertificate: JeanMarcFlamand.pfx
       Solution_Path: MPC-MassPropertiesCalculatorApp.sln
       #Test_Project_Path: MyWpfApp.Tests\MyWpfApp.Tests.csproj
       Wpf_Project_Path: MPC-MassPropertiesCalculator\MMPC-MassPropertiesCalculator.csproj
@@ -110,17 +110,16 @@ jobs:
         $manifest.save(".\$env:Wap_Project_Directory\Package.appxmanifest")
 
     # Restore the application
-    - name:  Restore the Wpf application to populate the obj folder
-      run: msbuild ${{ env.Solution_Path }} /t:Restore /p:Configuration=$env:Configuration /p:RuntimeIdentifier=$env:RuntimeIdentifier
-      env:
-        Configuration: Release
-        RuntimeIdentifier: win-x64
-    # was
     #- name:  Restore the Wpf application to populate the obj folder
-    #  run: msbuild $env:Solution_Path /t:Restore /p:Configuration=$env:Configuration /p:RuntimeIdentifier=$env:RuntimeIdentifier
+    #  run: msbuild ${{ env.Solution_Path }} /t:Restore /p:Configuration=$env:Configuration /p:RuntimeIdentifier=$env:RuntimeIdentifier
     #  env:
-    #    Configuration: ${{ matrix.Configuration }}
-    #    RuntimeIdentifier: win-${{ matrix.targetplatform }}
+    #    Configuration: Release
+    #    RuntimeIdentifier: win-x64
+    - name:  Restore the Wpf application to populate the obj folder
+      run: msbuild $env:Solution_Path /t:Restore /p:Configuration=$env:Configuration /p:RuntimeIdentifier=$env:RuntimeIdentifier
+      env:
+        Configuration: ${{ matrix.Configuration }}
+        RuntimeIdentifier: win-${{ matrix.targetplatform }}
     
     - name: NuGet Restore Wapp Project
       run: nuget restore $env:WappProject_Path

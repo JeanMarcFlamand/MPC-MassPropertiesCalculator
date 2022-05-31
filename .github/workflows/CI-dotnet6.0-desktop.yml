@@ -40,10 +40,10 @@ name: CI.NET 6.0 Desktop
 
 on:
   push:
-    branches: [ main ]
+   branches:
   # pull_request:
   #  branches: [ main ]
-
+    - JMF-CD-ImplementationFailed
 jobs:
 
   build:
@@ -104,7 +104,7 @@ jobs:
         #[IO.File]::WriteAllBytes("$certificatePath", $pfx_cert_byte)
         #put back code signing using .pfx file
         $pfx_cert_byte = [System.Convert]::FromBase64String("${{ secrets.Base64_Encoded_Pfx }}")
-        $certificatePath = Join-Path -Path $env:Wap_Project_Directory -ChildPath GitHubActionsWorkflow.pfx
+        $certificatePath = Join-Path -Path $env:Wap_Project_Directory -ChildPath JeanMarcFlamand.pfx
         [IO.File]::WriteAllBytes("$certificatePath", $pfx_cert_byte)
 
     # Build and create MSIX package from https://github.com/microsoft/github-actions-for-desktop-apps/blob/lance/net6-update/.github/workflows/ci-net6-temp.yml
@@ -118,7 +118,7 @@ jobs:
         TargetPlatform: x64
         RuntimeIdentifier: win-x64
         AppxBundlePlatforms: x64  # x86|x64|arm|arm64
-        SigningEnabled: true
+        SigningEnabled: false
         GenerateAppPackage: true    
         
     # Create the app package by building and packaging the Windows Application Packaging project
@@ -132,11 +132,12 @@ jobs:
 
     # Remove the pfx
     - name: Remove the pfx
-      run: Remove-Item -path $env:Wap_Project_Directory\GitHubActionsWorkflow.pfx
+      run: Remove-Item -path $env:Wap_Project_Directory\JeanMarcFlamand.pfx
 
     # Upload the MSIX package: https://github.com/marketplace/actions/upload-a-build-artifact
     - name: Upload build artifacts
       uses: actions/upload-artifact@v3
       with:
         name: MSIX Package
+        # path: ${{ env.Wap_Project_Directory }}\AppPackages
         path: ${{ env.GITHUB_ACTION_PATH }}\${{ env.App_Packages_Directory }}
