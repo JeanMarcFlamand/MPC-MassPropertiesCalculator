@@ -43,7 +43,7 @@ on:
    branches:
   # pull_request:
   #  branches: [ main ]
-    - JMF-CD-ImplementationFailed
+    - main
 jobs:
 
   build:
