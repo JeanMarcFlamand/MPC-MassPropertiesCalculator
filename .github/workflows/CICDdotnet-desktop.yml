@@ -36,13 +36,13 @@
 # For a complete CI/CD sample to get started with GitHub Action workflows for Desktop Applications,
 # refer to https://github.com/microsoft/github-actions-for-desktop-apps
 
-name: .NET Core Desktop
+name: .NET 6.0 GithubDesktop yml
 
 on:
   push:
-    branches: [ tbd ]
-  pull_request:
-    branches: [ tbd ]
+    branches: [ GithubDesktop ]
+  # pull_request:
+  #  branches: [ tbd ]
 
 jobs:
 
