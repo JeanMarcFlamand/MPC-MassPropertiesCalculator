@@ -18,8 +18,8 @@ name:  CD.NET 6.0 Desktop
 on:
   push:
     branches:
-      #- main
-      - JMF-CD-ImplementationFailed
+      - main
+      #- JMF-CD-ImplementationFailed
 jobs:
 
   build:
