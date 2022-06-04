@@ -2,7 +2,7 @@ Error: C:\Users\runneradmin\AppData\Local\Microsoft\dotnet\sdk\6.0.300\Sdks\Micr
 
 add 
 
-        <RuntimeIdentifiers>win-x86</RuntimeIdentifiers>
+        <RuntimeIdentifiers>win-x64</RuntimeIdentifiers>
 
 in the csproj file
 
