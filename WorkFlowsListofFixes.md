@@ -14,7 +14,7 @@ in the csproj file
           <ImplicitUsings>enable</ImplicitUsings>
           <Nullable>enable</Nullable>
           <Platforms>AnyCPU;x64</Platforms>
-        <RuntimeIdentifiers>win-x86</RuntimeIdentifiers>   <!--added-->
+        <RuntimeIdentifiers>win-x86</RuntimeIdentifiers>
         </PropertyGroup>
         
 Solution Ref: [YouTube](https://youtu.be/VIlDni8-iWM)
