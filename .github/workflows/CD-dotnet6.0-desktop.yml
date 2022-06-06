@@ -19,8 +19,8 @@ on:
   push:
     branches:
       # - main
-      # - JMF-CD-ImplementationFailed
-      - tbd
+      - CodeSign
+      
 jobs:
 
   build:
@@ -136,7 +136,8 @@ jobs:
     
     # Build the Windows Application Packaging project for Dev and Prod_Sideload
     - name: Build the Windows Application Packaging Project (wapproj) for ${{ matrix.ChannelName }}
-      run: msbuild $env:Solution_Path /p:Platform=$env:TargetPlatform /p:Configuration=$env:Configuration /p:UapAppxPackageBuildMode=$env:BuildMode /p:AppxBundle=$env:AppxBundle /p:PackageCertificateKeyFile=$env:SigningCertificate /p:PackageCertificatePassword=${{ secrets.Pfx_Key }}
+      # was run: msbuild $env:Solution_Path /p:Platform=$env:TargetPlatform /p:Configuration=$env:Configuration /p:UapAppxPackageBuildMode=$env:BuildMode /p:AppxBundle=$env:AppxBundle /p:PackageCertificateKeyFile=$env:SigningCertificate /p:PackageCertificatePassword=${{ secrets.Pfx_Key }}
+      run: msbuild $env:Wap_Project_Directory/$env:Wap_Project_Name /p:Platform=$env:TargetPlatform /p:Configuration=$env:Configuration /p:UapAppxPackageBuildMode=$env:BuildMode /p:GenerateAppInstallerFile=$env:GenerateAppInstallerFile /p:AppInstallerUri=$env:AppInstallerUri /p:PackageCertificateKeyFile=$env:SigningCertificate /p:PackageCertificatePassword=${{ secrets.Pfx_Key }}
       if: matrix.ChannelName != 'Prod_Store'
       env:
         AppxBundle: Never
@@ -147,16 +148,16 @@ jobs:
         TargetPlatform: ${{ matrix.targetplatform }}
 
     # Build the Windows Application Packaging project for Prod_Store
-    - name: Build the Windows Application Packaging Project (wapproj) for ${{ matrix.ChannelName }}
-      run: msbuild $env:Solution_Path /p:Platform=$env:TargetPlatform /p:Configuration=$env:Configuration /p:UapAppxPackageBuildMode=$env:BuildMode /p:AppxBundle=$env:AppxBundle /p:GenerateAppInstallerFile=$env:GenerateAppInstallerFile /p:AppxPackageSigningEnabled=$env:AppxPackageSigningEnabled
-      if: matrix.ChannelName == 'Prod_Store'
-      env:
-        AppxBundle: Never
-        AppxPackageSigningEnabled: False
-        BuildMode: StoreUpload
-        Configuration: ${{ matrix.Configuration }}
-        GenerateAppInstallerFile: False
-        TargetPlatform: ${{ matrix.targetplatform }}
+    #- name: Build the Windows Application Packaging Project (wapproj) for ${{ matrix.ChannelName }}
+    #  run: msbuild $env:Solution_Path /p:Platform=$env:TargetPlatform /p:Configuration=$env:Configuration /p:UapAppxPackageBuildMode=$env:BuildMode /p:AppxBundle=$env:AppxBundle /p:GenerateAppInstallerFile=$env:GenerateAppInstallerFile /p:AppxPackageSigningEnabled=$env:AppxPackageSigningEnabled
+    #  if: matrix.ChannelName == 'Prod_Store'
+    #  env:
+    #    AppxBundle: Never
+    #    AppxPackageSigningEnabled: False
+    #    BuildMode: StoreUpload
+    #    Configuration: ${{ matrix.Configuration }}
+    #    GenerateAppInstallerFile: False
+    #    TargetPlatform: ${{ matrix.targetplatform }}
 
     # Remove the .pfx
     - name: Remove the .pfx
