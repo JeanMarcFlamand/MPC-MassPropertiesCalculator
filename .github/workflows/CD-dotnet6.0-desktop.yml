@@ -9,6 +9,7 @@
 # depending on which channel is being built.
 # Once the MSIX is created for each channel configuration, the agent archives the AppPackages folder, then creates
 # a Release with the specified git release tag. The archive is uploaded to the release as an asset for storage or distribution.
+
 name:  CD.NET 6.0 Desktop
 
 # Trigger on any push with a git tag
