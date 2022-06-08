@@ -20,6 +20,8 @@ on:
     branches:
       # - main
       - CodeSign
+    tags:
+      - '*'
       
 jobs:
 
@@ -49,7 +51,7 @@ jobs:
           - channel: Prod_Sideload
             Configuration: Release
             ChannelName: Prod_Sideload
-            DistributionUrl: https://https://github.com/JeanMarcFlamand/MPC-MassPropertiesCalculator/releases/Desktop.Console # remove -
+            DistributionUrl: https://github.com/JeanMarcFlamand/MPC-MassPropertiesCalculator/releases/Desktop.Console # remove -
             MsixPackageId: MPC-MassPropertiesCalculator.DevOpsDemo.ProdSideload
             MsixPublisherId: CN=Jean-Marc Flamand
             MsixPackageDisplayName: MPC-MassPropertiesCalculator (ProdSideload)
