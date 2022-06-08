@@ -40,9 +40,10 @@ name: CI.NET 6.0 Desktop
 
 on:
   push:
-    branches: [ main ]
-  # pull_request:
+   branches:
   #  branches: [ main ]
+  # pull_request:
+    - CodeSign
 
 jobs:
 
