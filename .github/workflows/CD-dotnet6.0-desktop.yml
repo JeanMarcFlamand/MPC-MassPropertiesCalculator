@@ -47,7 +47,6 @@ jobs:
           #  MsixPackageId: MyWPFApp.DevOpsDemo.Dev
           #  MsixPublisherId: CN=GitHubActionsDemo
           #  MsixPackageDisplayName: MyWPFApp (Dev)
-
           # includes the following variables for the matrix leg matching Prod_Sideload
           - channel: Prod_Sideload
             Configuration: Release
