@@ -55,7 +55,6 @@ jobs:
             MsixPackageId: MPC-MassPropertiesCalculator.DevOpsDemo.ProdSideload
             MsixPublisherId: CN=Jean-Marc Flamand
             MsixPackageDisplayName: MPC-MassPropertiesCalculator (ProdSideload)
-
           # includes the following variables for the matrix leg matching Prod_Store
           #- channel: Prod_Store
           #  Configuration: Release
