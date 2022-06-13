@@ -64,7 +64,7 @@ jobs:
           #  MsixPublisherId: CN=GitHubActionsDemo
           #  MsixPackageDisplayName: MyWPFApp (ProdStore)
 
-    runs-on: windows-latest
+    runs-on: windows-2016
 
     env:
       App_Packages_Archive: AppPackages.zip
