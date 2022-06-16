@@ -72,7 +72,7 @@ jobs:
       SigningCertificate: JeanMarcFlamand.pfx
       Solution_Path: MPC-MassPropertiesCalculatorApp.sln
       #Test_Project_Path: MyWpfApp.Tests\MyWpfApp.Tests.csproj
-      Wpf_Project_Path: MPC-MassPropertiesCalculator\MMPC-MassPropertiesCalculator.csproj
+      Wpf_Project_Path: MPC-MassPropertiesCalculator\MPC-MassPropertiesCalculator.csproj
       Wap_Project_Directory: MPC-MassPropertiesCalculator.Installer
       Wap_Project_Name: MPC-MassPropertiesCalculator.Installer.wapproj
       Actions_Allow_Unsecure_Commands: true # Allows AddPAth and SetEnv commands
