@@ -80,7 +80,8 @@ jobs:
           }
           $newfile | Set-Content $assemblyInfoPath -encoding "UTF8"
         }
-        $assemblyInfoPath = "MPC-MassPropertiesCalculator\Properties\AssemblyInfo.cs"
+        # $assemblyInfoPath = "MPC-MassPropertiesCalculator\Properties\AssemblyInfo.cs"
+        $assemblyInfoPath = "MPC-MassPropertiesCalculator\obj\x64\Release\net6.0\MPC-MassPropertiesCalculator.AssemblyInfo.cs"
         SetAssemblyFileVersion $assemblyInfoPath $env:APP_VERSION
 
 
