@@ -23,7 +23,7 @@ env:
   AppxPackageSigningEnabled: True
   GenerateAppInstallerFile: True
   BuildMode: SideloadOnly
-  AppInstUri: 'https://dvlup.blob.core.windows.net/general-app-files/Installers/MediaFileManager/'
+  # AppInstUri: 'https://dvlup.blob.core.windows.net/general-app-files/Installers/MediaFileManager/'
   AppInstUri: 'https://github.com/JeanMarcFlamand/MPC-MassPropertiesCalculator/releases/Desktop.Console-Installer'
   SigningCertificate: JeanMarcFlamand.pfx
   WapProjectDirectory: '\PackageProject'
