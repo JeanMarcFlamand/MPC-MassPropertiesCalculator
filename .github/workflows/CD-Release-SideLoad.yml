@@ -63,26 +63,26 @@ jobs:
         $manifest.save("MPC-MassPropertiesCalculator.Installer\Package.appxmanifest")
         
     # Updates the WPF project's assembly version number.
-    - name: Update WPF Assembly version
-      run: |
-        function SetAssemblyFileVersion([string]$pathToFile, [string]$newVersion) {
-          $newFile = Get-Content $pathToFile -encoding "UTF8" | foreach-object {
-            if ($_.StartsWith("[assembly: AssemblyFileVersion")) {
-              $verStart = $_.IndexOf("(")
-              $verEnd = $_.IndexOf(")", $verStart)
-              $origVersion = $_.SubString($verStart+2, $verEnd-$verStart-3)
-              $newVersion = "$env:APP_VERSION"
-              write-host "Setting AssemblyFileVersion from $origVersion to $newVersion"
-              $_.Replace($origVersion, $newVersion)
-            }  else {
-              $_
-            }
-          }
-          $newfile | Set-Content $assemblyInfoPath -encoding "UTF8"
-        }
+    #- name: Update WPF Assembly version
+    #  run: |
+    #    function SetAssemblyFileVersion([string]$pathToFile, [string]$newVersion) {
+    #      $newFile = Get-Content $pathToFile -encoding "UTF8" | foreach-object {
+    #        if ($_.StartsWith("[assembly: AssemblyFileVersion")) {
+    #          $verStart = $_.IndexOf("(")
+    #          $verEnd = $_.IndexOf(")", $verStart)
+    #          $origVersion = $_.SubString($verStart+2, $verEnd-$verStart-3)
+    #          $newVersion = "$env:APP_VERSION"
+    #          write-host "Setting AssemblyFileVersion from $origVersion to $newVersion"
+    #          $_.Replace($origVersion, $newVersion)
+    #        }  else {
+    #          $_
+    #        }
+    #      }
+    #      $newfile | Set-Content $assemblyInfoPath -encoding "UTF8"
+    #    }
         # $assemblyInfoPath = "MPC-MassPropertiesCalculator\Properties\AssemblyInfo.cs"
-        $assemblyInfoPath = "MPC-MassPropertiesCalculator\obj\x64\Release\net6.0\MPC-MassPropertiesCalculator.AssemblyInfo.cs"
-        SetAssemblyFileVersion $assemblyInfoPath $env:APP_VERSION
+     #   $assemblyInfoPath = "MPC-MassPropertiesCalculator\obj\x64\Release\net6.0\MPC-MassPropertiesCalculator.AssemblyInfo.cs"
+     #   SetAssemblyFileVersion $assemblyInfoPath $env:APP_VERSION
 
 
     # ******************| TOOL INSTALL and DEPENDENCY RESTORE |********************* #

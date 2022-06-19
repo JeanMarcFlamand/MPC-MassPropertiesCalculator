@@ -43,7 +43,7 @@ on:
    branches:
   #  branches: [ main ]
   # pull_request:
-    - CodeSign
+    - CodeSignonOld
 
 jobs:
 
