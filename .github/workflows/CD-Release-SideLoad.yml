@@ -131,7 +131,7 @@ jobs:
       run: |
         $pfx_cert_byte = [System.Convert]::FromBase64String("${{ secrets.BASE64_ENCODED_PFX }}")
         $currentDirectory = Get-Location
-        $certificatePath = Join-Path -Path $currentDirectory -ChildPath "MPC-MassPropertiesCalculator.Installert" -AdditionalChildPath "${{ env.SigningCertificate }}"
+        $certificatePath = Join-Path -Path $currentDirectory -ChildPath "MPC-MassPropertiesCalculator.Installer" -AdditionalChildPath "${{ env.SigningCertificate }}"
         [IO.File]::WriteAllBytes("$certificatePath", $pfx_cert_byte)
     
     # Build using SideLoad and AppInstaller instructions (requires code signing)
