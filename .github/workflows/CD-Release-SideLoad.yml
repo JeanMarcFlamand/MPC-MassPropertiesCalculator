@@ -4,7 +4,7 @@ name: CD Release (sideload)
 on:
   push:
     branches:
-      - CodeSign
+      - CodeSignOnHold
     paths:
       - "src/**/*"
       - ".github/workflows/CD-Release-SideLoad.yml"
