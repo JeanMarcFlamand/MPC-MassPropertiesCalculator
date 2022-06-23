@@ -132,6 +132,7 @@ jobs:
         $pfx_cert_byte = [System.Convert]::FromBase64String("${{ secrets.Base64_Encoded_Pfx }}")
         $currentDirectory = Get-Location
         $certificatePath = Join-Path -Path $currentDirectory -ChildPath $env:Wap_Project_Directory -AdditionalChildPath $env:SigningCertificate
+        echo $certificatePath
         [IO.File]::WriteAllBytes("$certificatePath", $pfx_cert_byte)
       if: matrix.ChannelName != 'Prod_Store'
     
