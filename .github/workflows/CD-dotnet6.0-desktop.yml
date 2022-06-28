@@ -127,7 +127,6 @@ jobs:
       run: nuget restore $env:WappProject_Path
     
     # Decode the Base64 encoded Pfx
-
     - name: Decode the Pfx
       run: |
         $pfx_cert_byte = [System.Convert]::FromBase64String("${{ secrets.Base64_Encoded_Pfx }}")
