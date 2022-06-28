@@ -56,7 +56,8 @@ jobs:
         [xml]$manifest = get-content "MPC-MassPropertiesCalculator.Installer\Package.appxmanifest"
         $manifest.Package.Identity.Version = $env:APP_VERSION
         $manifest.Package.Identity.Name = "61469LanceLotSoftware.MediaFileManager"
-        $manifest.Package.Identity.Publisher = 'CN="Jean-Marc Flamand, LLC", O="7JTFCode", S="Quebec", C="CA"'
+        # was $manifest.Package.Identity.Publisher = 'CN="Jean-Marc Flamand, LLC", O="7JTFCode", S="Quebec", C="CA"'
+        $manifest.Package.Identity.Publisher = 'CN="Jean-Marc Flamand", O="Jean-Marc Flamand", S="Quebec", C="CA"'
         $manifest.Package.Properties.DisplayName = "MPC-MassPropertiesCalculator"
         $manifest.Package.Properties.PublisherDisplayName = "7JTFCode"
         $manifest.Package.Applications.Application.VisualElements.DisplayName = "MPC-MassPropertiesCalculator"
