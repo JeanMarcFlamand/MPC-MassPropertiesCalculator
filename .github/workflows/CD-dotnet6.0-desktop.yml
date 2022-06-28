@@ -106,7 +106,7 @@ jobs:
         [xml]$manifest = get-content ".\$env:Wap_Project_Directory\Package.appxmanifest"
         $manifest.Package.Identity.Version = "$env:NBGV_SimpleVersion.0"
         $manifest.Package.Identity.Name = "${{ matrix.MsixPackageId }}"
-        $manifest.Package.Identity.Publisher = "${{ matrix.MsixPublisherId }}"
+        #$manifest.Package.Identity.Publisher = "${{ matrix.MsixPublisherId }}"
         $manifest.Package.Properties.DisplayName = "${{ matrix.MsixPackageDisplayName }}"
         $manifest.Package.Applications.Application.VisualElements.DisplayName = "${{ matrix.MsixPackageDisplayName }}"
         $manifest.save(".\$env:Wap_Project_Directory\Package.appxmanifest")
