@@ -53,7 +53,7 @@ jobs:
             ChannelName: Prod_Sideload
             DistributionUrl: https://github.com/JeanMarcFlamand/MPC-MassPropertiesCalculator/releases/Desktop.Console # remove -
             MsixPackageId: MPC-MassPropertiesCalculator.DevOpsDemo.ProdSideload
-            MsixPublisherId: 'CN="Jean-Marc Flamand", O="Jean-Marc Flamand", S="Quebec", C="CA"'
+            MsixPublisherId: CN="Jean-Marc Flamand", O="Jean-Marc Flamand", S="Quebec", C="CA"
             MsixPackageDisplayName: MPC-MassPropertiesCalculator (ProdSideload)
           # includes the following variables for the matrix leg matching Prod_Store
           #- channel: Prod_Store
