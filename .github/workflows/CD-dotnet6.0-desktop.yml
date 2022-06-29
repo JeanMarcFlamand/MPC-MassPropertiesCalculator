@@ -43,9 +43,9 @@ jobs:
             Configuration: Release
             ChannelName: Prod_Sideload
             DistributionUrl: https://github.com/JeanMarcFlamand/MPC-MassPropertiesCalculator/releases/Desktop.Console # remove -
-            MsixPackageId: MPC-MassPropertiesCalculator.Demo.ProdSideload
+            MsixPackageId: MPC-MassPropertiesCalculator.Demo
             #MsixPublisherId: CN="Jean-Marc Flamand", O="Jean-Marc Flamand", S="Quebec", C="CA"
-            MsixPackageDisplayName: MPC-MassPropertiesCalculator (ProdSideload)
+            MsixPackageDisplayName: MPC-MassPropertiesCalculator (Demo)
 
     runs-on: windows-latest
 
@@ -175,7 +175,6 @@ jobs:
         release_name: "MPC-Console App Demo v.${{ env.APP_VERSION }}"
         draft: false
         prerelease: false
-        body_path: .github\other\preview_releasebody.md
 
 
     # Upload release asset:   https://github.com/actions/upload-release-asset
