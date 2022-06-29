@@ -41,7 +41,7 @@ name: CI.NET 6.0 MPC-Console Demo
 on:
   push:
    branches:
-    [main]
+    [ "main" ]
   # pull_request:
   #  - CodeSignonOld
 
