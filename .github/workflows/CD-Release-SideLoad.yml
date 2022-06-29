@@ -1,10 +1,10 @@
 # If you are looking for guidance for your builds, see https://github.com/microsoft/github-actions-for-desktop-apps
-name: CD Release (sideload)
+name: CD Release Console Demo App (sideload)
 
 on:
   push:
     branches:
-      - CodeSignOnHold
+      - CodeSign
     paths:
       - "src/**/*"
       - ".github/workflows/CD-Release-SideLoad.yml"
@@ -45,7 +45,7 @@ jobs:
       with:
         script: |
           $buildDay = Get-Date -Format "yyyy.Mdd"
-          $runNum = $env:GITHUB_RUN_NUMBER
+          $runNum = $env:GITHUB_RUN_NUMBER # Default environment variables
           $ver = "$buildDay" + "." + "$runNum" + ".0"
           echo $ver
           Set-ActionVariable APP_VERSION $ver
