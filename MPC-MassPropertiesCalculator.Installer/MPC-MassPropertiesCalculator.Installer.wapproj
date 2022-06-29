@@ -56,7 +56,7 @@
     <DefaultLanguage>en-US</DefaultLanguage>
     <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
     <NoWarn>$(NoWarn);NU1702</NoWarn>
-    <PackageCertificateThumbprint>2E6A42F243FEAA003F0FD45061A8A7E460C0FA6C</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>BAC91E82EDD44E6B48F98D6C478D1377BFA74408</PackageCertificateThumbprint>
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
     <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
@@ -157,7 +157,6 @@
     <Content Include="Images\Wide310x150Logo.scale-150.png" />
     <Content Include="Images\Wide310x150Logo.scale-200.png" />
     <Content Include="Images\Wide310x150Logo.scale-400.png" />
-    <None Include="JeanMarcFlamand.pfx" />
   </ItemGroup>
   <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />
   <ItemGroup>

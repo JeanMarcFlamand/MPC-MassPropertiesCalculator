@@ -40,9 +40,10 @@ name: CI.NET 6.0 Desktop
 
 on:
   push:
-    branches: [ main ]
-  # pull_request:
+   branches:
   #  branches: [ main ]
+  # pull_request:
+    - CodeSignonOld
 
 jobs:
 
@@ -110,7 +111,7 @@ jobs:
         Configuration: Release
         TargetPlatform: x64
         RuntimeIdentifier: win-x64
-        AppxBundlePlatforms: x64  # x86|x64|arm|arm64
+        AppxBundlePlatforms: x64
         SigningEnabled: false
         GenerateAppPackage: true    
         
