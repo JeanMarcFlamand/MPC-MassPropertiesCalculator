@@ -44,7 +44,7 @@ jobs:
           - channel: Prod_Sideload
             Configuration: Release
             ChannelName: Prod_Sideload
-            DistributionUrl: https://github.com/JeanMarcFlamand/MPC-MassPropertiesCalculator/releases/Desktop.Console # remove -
+            #DistributionUrl: https://github.com/JeanMarcFlamand/MPC-MassPropertiesCalculator/releases/Desktop.Console # remove -
             MsixPackageId: MPC-MassPropertiesCalculator.Demo
             MsixPackageDisplayName: MPC-MassPropertiesCalculator (Demo)
 
@@ -136,7 +136,7 @@ jobs:
       if: matrix.ChannelName != 'Prod_Store'
       env:
         AppxBundle: Never
-        AppInstallerUri: ${{ matrix.DistributionUrl }}
+        #AppInstallerUri: ${{ matrix.DistributionUrl }}
         BuildMode: SideloadOnly
         Configuration: ${{ matrix.Configuration }}
         GenerateAppInstallerFile: True
