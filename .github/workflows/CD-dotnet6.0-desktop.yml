@@ -21,8 +21,8 @@ name:  CD.NET 6.0 MPC-Console Demo
 on:
   push:
     branches:
-      # - main
-      - CodeSign
+      - main
+      #- CodeSign
     tags:
       - '*'
       

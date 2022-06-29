@@ -41,9 +41,9 @@ name: CI.NET 6.0 Desktop
 on:
   push:
    branches:
-  #  branches: [ main ]
+    - main
   # pull_request:
-    - CodeSignonOld
+  #  - CodeSignonOld
 
 jobs:
 
