@@ -23,8 +23,8 @@ on:
     branches:
       [ "main" ]
       #- CodeSign
-    tags:
-      - '*'
+    #tags:
+    #  - '*'
       
 jobs:
 
