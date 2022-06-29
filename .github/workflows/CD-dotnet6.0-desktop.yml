@@ -1,3 +1,4 @@
+#********** To Review ********************
 # Copyright (c) Microsoft Corporation.
 # Licensed under the MIT license.
 
@@ -9,8 +10,9 @@
 # depending on which channel is being built.
 # Once the MSIX is created for each channel configuration, the agent archives the AppPackages folder, then creates
 # a Release with the specified git release tag. The archive is uploaded to the release as an asset for storage or distribution.
+#********** End To Review ********************
 
-name:  CD.NET 6.0 Desktop
+name:  CD.NET 6.0 MPC-Console Demo
 
 # Trigger on any push with a git tag
 # To create a git tag, run the following commands on the branch you wish to release:
@@ -44,7 +46,6 @@ jobs:
             ChannelName: Prod_Sideload
             DistributionUrl: https://github.com/JeanMarcFlamand/MPC-MassPropertiesCalculator/releases/Desktop.Console # remove -
             MsixPackageId: MPC-MassPropertiesCalculator.Demo
-            #MsixPublisherId: CN="Jean-Marc Flamand", O="Jean-Marc Flamand", S="Quebec", C="CA"
             MsixPackageDisplayName: MPC-MassPropertiesCalculator (Demo)
 
     runs-on: windows-latest
@@ -65,12 +66,6 @@ jobs:
       uses: actions/checkout@v2
       with:
         fetch-depth: 0 # avoid shallow clone so nbgv can do its work.
-
-    # Use Nerdbank.GitVersioning to set version variables: https://github.com/AArnott/nbgv
-    #- name: Use Nerdbank.GitVersioning to set version variables
-    #  uses: aarnott/nbgv@v0.4.0
-    #  with:
-    #    setAllVars: true
 
     # ******************| ASSEMBLY AND MANIFEST VERSIONING |********************* #
     
@@ -100,10 +95,8 @@ jobs:
     - name: Update manifest version
       run: |
         [xml]$manifest = get-content ".\$env:Wap_Project_Directory\Package.appxmanifest"
-        #$manifest.Package.Identity.Version = "$env:NBGV_SimpleVersion.0"
         $manifest.Package.Identity.Version = $env:APP_VERSION
         $manifest.Package.Identity.Name = "${{ matrix.MsixPackageId }}"
-        # $manifest.Package.Identity.Publisher = "${{ matrix.MsixPublisherId }}"
         $manifest.Package.Properties.DisplayName = "${{ matrix.MsixPackageDisplayName }}"
         $manifest.Package.Applications.Application.VisualElements.DisplayName = "${{ matrix.MsixPackageDisplayName }}"
         $manifest.save(".\$env:Wap_Project_Directory\Package.appxmanifest")
@@ -139,7 +132,6 @@ jobs:
    
     # Build the Windows Application Packaging project for Dev and Prod_Sideload
     - name: Build the Windows Application Packaging Project (wapproj) for ${{ matrix.ChannelName }}
-      # was run: msbuild $env:Solution_Path /p:Platform=$env:TargetPlatform /p:Configuration=$env:Configuration /p:UapAppxPackageBuildMode=$env:BuildMode /p:AppxBundle=$env:AppxBundle /p:PackageCertificateKeyFile=$env:SigningCertificate /p:PackageCertificatePassword=${{ secrets.Pfx_Key }}
       run: msbuild $env:Wap_Project_Directory/$env:Wap_Project_Name /p:Platform=$env:TargetPlatform /p:Configuration=$env:Configuration /p:UapAppxPackageBuildMode=$env:BuildMode /p:GenerateAppInstallerFile=$env:GenerateAppInstallerFile /p:AppInstallerUri=$env:AppInstallerUri /p:PackageCertificateKeyFile=$env:SigningCertificate /p:PackageCertificatePassword=${{ secrets.Pfx_Key }}
       if: matrix.ChannelName != 'Prod_Store'
       env:
@@ -167,10 +159,6 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
       with:
-        # tag_name: ${{ github.ref}}.${{matrix.ChannelName}}.${{ matrix.targetplatform }}
-        #release_name:  ${{ github.ref }}.${{ matrix.ChannelName }}.${{ matrix.targetplatform }}
-        #draft: false
-        #prerelease: false
         tag_name: "v.${{ env.APP_VERSION }}"
         release_name: "MPC-Console App Demo v.${{ env.APP_VERSION }}"
         draft: false
