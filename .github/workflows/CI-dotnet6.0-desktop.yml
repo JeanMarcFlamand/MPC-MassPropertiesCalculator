@@ -37,7 +37,6 @@
 # refer to https://github.com/microsoft/github-actions-for-desktop-apps
 
 name: CI.NET 6.0 MPC-Console Demo
-
 on:
   push:
    branches:
