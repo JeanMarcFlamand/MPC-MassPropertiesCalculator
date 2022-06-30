@@ -6,7 +6,10 @@ The missing information may be the following fields.
 
 
   ## Installation Instructions:  
-  TBD.
+  ### Console Demo 
+  Go to the release and Download the [ConsoleDemoAppPackages.zip.](https://github.com/JeanMarcFlamand/MPC-MassPropertiesCalculator/releases)
+  Extact files.
+  
 
   ## Roadmap:
   Here are the things I would like to accomplish:
