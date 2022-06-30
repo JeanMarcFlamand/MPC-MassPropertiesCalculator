@@ -31,7 +31,6 @@ on:
 jobs:
 
   build:
-
     strategy:
 
     # The following build matrix allows builds across multiple configurations (Debug and Release) and production environments such as
