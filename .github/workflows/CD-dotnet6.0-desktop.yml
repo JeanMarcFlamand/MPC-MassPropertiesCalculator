@@ -51,8 +51,8 @@ jobs:
     runs-on: windows-latest
 
     env:
-      App_Packages_Archive: AppPackages.zip
-      App_Packages_Directory: AppPackages
+      App_Packages_Archive: ConsoleDemoAppPackages.zip
+      App_Packages_Directory: ConsoleDemoAppPackages
       SigningCertificate: JeanMarcFlamand.pfx
       Solution_Path: MPC-MassPropertiesCalculatorApp.sln
       #Test_Project_Path: MyWpfApp.Tests\MyWpfApp.Tests.csproj
@@ -162,7 +162,7 @@ jobs:
       with:
         tag_name: "v.${{ env.APP_VERSION }}"
         release_name: "MPC-Console App Demo v.${{ env.APP_VERSION }}"
-        draft: false
+        draft: true
         prerelease: false
 
 
