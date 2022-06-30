@@ -24,7 +24,7 @@ on:
       - main
       #- CodeSign
     paths-ignore:
-      - '**/README.md'
+      - 'README.md'
     tags:
       - '*'
       
