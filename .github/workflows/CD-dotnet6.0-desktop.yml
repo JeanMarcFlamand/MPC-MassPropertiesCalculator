@@ -23,6 +23,8 @@ on:
     branches:
       - main
       #- CodeSign
+    paths-ignore:
+      - '**/README.md'
     tags:
       - '*'
       
@@ -51,7 +53,7 @@ jobs:
     runs-on: windows-latest
 
     env:
-      App_Packages_Archive: ConsoleDemoAppPackages.zip
+      App_Packages_Archive: AppPackages.zip
       App_Packages_Directory: AppPackages
       SigningCertificate: JeanMarcFlamand.pfx
       Solution_Path: MPC-MassPropertiesCalculatorApp.sln
