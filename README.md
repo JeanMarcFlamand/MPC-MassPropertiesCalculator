@@ -7,7 +7,7 @@ The missing information may be the following fields.
 
   ## Installation Instructions:  
   ### Console Demo 
-  1. Go to the release and Download the [ConsoleDemoAppPackages.zip.](https://github.com/JeanMarcFlamand/MPC-MassPropertiesCalculator/releases)
+  1. Go to the release and Download the [AppPackages.zip.](https://github.com/JeanMarcFlamand/MPC-MassPropertiesCalculator/releases)
   2. Extact files.
   3. Lunch the MPC-MassPropertiesCalculator.Installer_xxxx.xxx.xxx.x_x64.appxbundle files.
   
