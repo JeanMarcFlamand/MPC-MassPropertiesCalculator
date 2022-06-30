@@ -44,7 +44,7 @@ jobs:
           - channel: Prod_Sideload
             Configuration: Release
             ChannelName: Prod_Sideload
-            #DistributionUrl: https://github.com/JeanMarcFlamand/MPC-MassPropertiesCalculator/releases/Desktop.Console # remove -
+            DistributionUrl: https://github.com/JeanMarcFlamand/MPC-MassPropertiesCalculator/releases/Desktop.Console # remove -
             MsixPackageId: MPC-MassPropertiesCalculator.Demo
             MsixPackageDisplayName: MPC-MassPropertiesCalculator (Demo)
 
@@ -132,12 +132,12 @@ jobs:
    
     # Build the Windows Application Packaging project for Dev and Prod_Sideload
     - name: Build the Windows Application Packaging Project (wapproj) for ${{ matrix.ChannelName }}
-      #run: msbuild $env:Wap_Project_Directory/$env:Wap_Project_Name /p:Platform=$env:TargetPlatform /p:Configuration=$env:Configuration /p:UapAppxPackageBuildMode=$env:BuildMode /p:GenerateAppInstallerFile=$env:GenerateAppInstallerFile /p:AppInstallerUri=$env:AppInstallerUri /p:PackageCertificateKeyFile=$env:SigningCertificate /p:PackageCertificatePassword=${{ secrets.Pfx_Key }}  
-      run: msbuild $env:Wap_Project_Directory/$env:Wap_Project_Name /p:Platform=$env:TargetPlatform /p:Configuration=$env:Configuration /p:UapAppxPackageBuildMode=$env:BuildMode /p:GenerateAppInstallerFile=$env:GenerateAppInstallerFile /p:PackageCertificateKeyFile=$env:SigningCertificate /p:PackageCertificatePassword=${{ secrets.Pfx_Key }}
+      run: msbuild $env:Wap_Project_Directory/$env:Wap_Project_Name /p:Platform=$env:TargetPlatform /p:Configuration=$env:Configuration /p:UapAppxPackageBuildMode=$env:BuildMode /p:GenerateAppInstallerFile=$env:GenerateAppInstallerFile /p:AppInstallerUri=$env:AppInstallerUri /p:PackageCertificateKeyFile=$env:SigningCertificate /p:PackageCertificatePassword=${{ secrets.Pfx_Key }}  
+      #run: msbuild $env:Wap_Project_Directory/$env:Wap_Project_Name /p:Platform=$env:TargetPlatform /p:Configuration=$env:Configuration /p:UapAppxPackageBuildMode=$env:BuildMode /p:GenerateAppInstallerFile=$env:GenerateAppInstallerFile /p:PackageCertificateKeyFile=$env:SigningCertificate /p:PackageCertificatePassword=${{ secrets.Pfx_Key }}
       if: matrix.ChannelName != 'Prod_Store'
       env:
         AppxBundle: Never
-        #AppInstallerUri: ${{ matrix.DistributionUrl }}
+        AppInstallerUri: ${{ matrix.DistributionUrl }}
         BuildMode: SideloadOnly
         Configuration: ${{ matrix.Configuration }}
         GenerateAppInstallerFile: True
