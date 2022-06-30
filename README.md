@@ -1,8 +1,8 @@
 # MPC-MassPropertiesCalculator
 The app must calculate the total weight and center of gravity best so far of a list of items.
 The missing information may be the following fields.
- 1. Quantity
- 2. Center of gravity
+ 1. Quantity.
+ 2. Center of gravity.
 
 
   ## Installation Instructions:  
