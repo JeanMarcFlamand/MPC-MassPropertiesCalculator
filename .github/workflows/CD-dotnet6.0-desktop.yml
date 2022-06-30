@@ -164,8 +164,8 @@ jobs:
       with:
         tag_name: "v.${{ env.APP_VERSION }}"
         release_name: "MPC-Console App Demo v.${{ env.APP_VERSION }}"
-        draft: true
-        prerelease: false
+        draft: false
+        prerelease: true
 
 
     # Upload release asset:   https://github.com/actions/upload-release-asset
