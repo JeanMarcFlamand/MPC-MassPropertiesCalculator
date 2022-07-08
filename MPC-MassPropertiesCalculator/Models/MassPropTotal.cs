@@ -1,5 +1,5 @@
 ﻿namespace MPC_MassPropertiesCalculator.Models;
-public class MassPropTotal
+public class MassPropTotal : IMassPropTotal
 {
     public MassPropTotal()
     {
@@ -15,7 +15,7 @@ public class MassPropTotal
         YarmsHasValues = false;
         ZarmsHasValues = false;
     }
-    
+
     public bool XarmsHasValues { get; set; }
     public bool YarmsHasValues { get; set; }
     public bool ZarmsHasValues { get; set; }

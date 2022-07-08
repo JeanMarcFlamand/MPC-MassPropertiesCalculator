@@ -33,7 +33,7 @@ public class ConsoleMainMenu
             ReadCSV(userfilepath);
             //Todo Display data in console
             FormatComment();
-            Console.WriteLine($"// Todo - Phase 1.3 Publish a demo console app with test files for those who have no programming knowledge." + "\r\n");
+            Console.WriteLine($"// Todo - Phase 1.4 Create data layer independent of the user interface." + "\r\n");
             Console.ResetColor(); // To return colors back
             MainMenu();
         }
