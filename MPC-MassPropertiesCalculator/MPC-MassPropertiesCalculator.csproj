@@ -14,20 +14,20 @@
     <None Remove="ScenariosDataforTesting\BOM MasspropCalc senario 01 - TWeightNot=0 and All CofG are defined %28Basic Calcs%29.csv" />
     <None Remove="ScenariosDataforTesting\BOM MasspropCalc senario 02 - TWeightNot=0 and Not All CofG are defined %28Advanced Calcs%29.csv" />
     <None Remove="ScenariosDataforTesting\BOM MasspropCalc senario 03 - TWeight=0  and All CofG are defined.csv" />
-    <None Remove="ScenariosDataforTesting\BOM MasspropCalc senario 04 - TWeight=0  and Not All CofG are defined.csv" />
-    <None Remove="ScenariosDataforTesting\BOM MasspropCalc senario 05 - TWeight=0  and All CofG are not defined.csv" />
   </ItemGroup>
 
+  
+
   <ItemGroup>
-    <Resource Include="ScenariosDataforTesting\BOM MasspropCalc senario 01 - TWeightNot=0 and All CofG are defined (Basic Calcs).csv">
+    <EmbeddedResource Include="ScenariosDataforTesting\BOM MasspropCalc senario 01 - TWeightNot=0 and All CofG are defined (Basic Calcs).csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ScenariosDataforTesting\BOM MasspropCalc senario 02 - TWeightNot=0 and Not All CofG are defined (Advanced Calcs).csv">
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScenariosDataforTesting\BOM MasspropCalc senario 02 - TWeightNot=0 and Not All CofG are defined (Advanced Calcs).csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="ScenariosDataforTesting\BOM MasspropCalc senario 03 - TWeight=0  and All CofG are defined.csv">
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScenariosDataforTesting\BOM MasspropCalc senario 03 - TWeight=0  and All CofG are defined.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </EmbeddedResource>
     <EmbeddedResource Include="ScenariosDataforTesting\BOM MasspropCalc senario 04 - TWeight=0  and Not All CofG are defined.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>

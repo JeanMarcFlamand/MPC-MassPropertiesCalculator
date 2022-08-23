@@ -62,7 +62,7 @@ public class ConsoleMainMenu
         {
             case "1":
                 //LoadFile();
-                LoadfileFromDialog(Dialog.FileOpen("csv",null));
+                LoadfileFromDialog(Dialog.FileOpen("csv", Environment.CurrentDirectory + "\\" + ScenariosDataforTestingDirectory ));
                 break;
             case "2":
                 Console.Clear();
