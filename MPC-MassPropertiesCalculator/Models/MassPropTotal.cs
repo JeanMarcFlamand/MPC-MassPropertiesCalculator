@@ -176,18 +176,19 @@ public class MassPropTotal : IMassPropTotal
                 _xArm = _momentWithXarm / _weightWithXarm;
                 // adjust the total moment by adding moment of weight not having X arm.
                 _xTotalMoment = _momentWithXarm + (_totalWeight - _weightWithXarm) * _xArm;
+                _xArmForTotalMomentWithXarm = _xArm; // added on 20220831
             }
-            //scenario 3 - Total weight is = 0 and all weight and CG are defined in X axis.
+            //scenario 4 - Total weight is = 0 and all weight and CG are defined in X axis.
             else if (_totalWeight == 0 && _totalWeight - _weightWithXarm == 0)
             {
                 // Preform moment caculation only beacause calculation X arm will do overflow .
                 _xArm = null;
                 _xTotalMoment = _momentWithXarm;
             }
-            //scenario 4 - Total weight is = 0 and some record do not have CG defined in X axis.
+            //scenario 5 - Total weight is = 0 and some record do not have CG defined in X axis.
             else if (_totalWeight == 0 && _totalWeight - _weightWithXarm != 0)
             {
-                //  Check if weightWithXarm =0 Preform moment caculation only beacause calculation X arm will do overflow .
+                //  Check if weightWithXarm = 0 Preform moment caculation only beacause calculation X arm will do overflow .
                 if (_weightWithXarm == 0)
                 {
                     _xArm = null;
@@ -204,7 +205,7 @@ public class MassPropTotal : IMassPropTotal
             }
 
         }
-        //scenario 5 -  no CofG
+        //scenario 3 and 6 -  no CofG
         else
         {
             _xArm = null;
@@ -229,15 +230,16 @@ public class MassPropTotal : IMassPropTotal
                 _yArm = _momentWithYarm / _weightWithYarm;
                 // adjust the total moment by adding moment of weight not having Y arm.
                 _yTotalMoment = _momentWithYarm + (_totalWeight - _weightWithYarm) * _yArm;
+                _yArmForTotalMomentWithYarm = _yArm; // added on 20220831
             }
-            // Scenario 3 - Total weight is = 0 and all weight and CG are defined in Y axis.
+            // Scenario 4 - Total weight is = 0 and all weight and CG are defined in Y axis.
             else if (_totalWeight == 0 && _totalWeight - _weightWithYarm == 0)
             {
                 // Preform moment caculation only beacause calculation Y arm will do overflow .
                 _yArm = null;
                 _yTotalMoment = _momentWithYarm;
             }
-            // Scenario 4 - Total weight is = 0 and some record do not have CG defined in Y axis.
+            // Scenario 5 - Total weight is = 0 and some record do not have CG defined in Y axis.
             else if (_totalWeight == 0 && _totalWeight - _weightWithYarm != 0)
             {
                 // Check if weightWithYarm =0 Preform moment caculation only beacause calculation Y arm will do overflow .
@@ -258,7 +260,7 @@ public class MassPropTotal : IMassPropTotal
             }
 
         }
-        // Scenario 5 - No CofG
+        // Scenario 3 and 6 - No CofG
         else
         {
             _yArm = null;
@@ -282,15 +284,16 @@ public class MassPropTotal : IMassPropTotal
                 _zArm = _momentWithZarm / _weightWithZarm;
                 // adjust the total moment by adding moment of weight not having Z arm.
                 _zTotalMoment = _momentWithZarm + (_totalWeight - _weightWithZarm) * _zArm;
+                _zArmForTotalMomentWithZarm = _zArm; // added on 20220831
             }
-            // Scenario 3 - Total weight is = 0 and all weight and CG are defined in X axis.
+            // Scenario 4 - Total weight is = 0 and all weight and CG are defined in X axis.
             else if (_totalWeight == 0 && _totalWeight - _weightWithZarm == 0)
             {
                 // Preform moment caculation only beacause calculation X arm will do overflow .
                 _zArm = null;
                 _zTotalMoment = _momentWithZarm;
             }
-            // Scenario 4 - Total weight is = 0 and some record do not have CG defined in Z axis.
+            // Scenario 5 - Total weight is = 0 and some record do not have CG defined in Z axis.
             else if (_totalWeight == 0 && _totalWeight - _weightWithZarm != 0)
             {
                 // Check if weightWithXarm =0 Preform moment caculation only beacause calculation Z arm will do overflow .
@@ -311,7 +314,7 @@ public class MassPropTotal : IMassPropTotal
             }
 
         }
-        // Scenario 5 - No CofG
+        // Scenario 3 and 6 - No CofG
         else
         {
             _zArm = null;

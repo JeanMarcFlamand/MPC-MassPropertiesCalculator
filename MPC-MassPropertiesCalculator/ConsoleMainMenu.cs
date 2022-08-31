@@ -1,4 +1,5 @@
 ﻿using MPC_MassPropertiesCalculator.Models;
+using MPCHelpFromYoutubeLibrary;
 
 namespace MPC_MassPropertiesCalculator;
 
@@ -15,7 +16,8 @@ public class ConsoleMainMenu
         Console.WriteLine("MPC- Mass Properties Calculator Menu" + "\r\n");
         Console.WriteLine("1: Load File");
         Console.WriteLine("2: Clear the Screen");
-        Console.WriteLine("3: Exit");
+        Console.WriteLine("3: Help on YouTube");
+        Console.WriteLine("4: Exit");
         Console.WriteLine("Type the option number to navigate");
         optionnumber = Console.ReadLine();
 
@@ -62,6 +64,7 @@ public class ConsoleMainMenu
         {
             case "1":
                 //LoadFile();
+                Console.Clear();
                 LoadfileFromDialog(Dialog.FileOpen("csv", Environment.CurrentDirectory + "\\" + ScenariosDataforTestingDirectory ));
                 break;
             case "2":
@@ -69,6 +72,10 @@ public class ConsoleMainMenu
                 MainMenu();
                 break;
             case "3":
+                Console.Clear();
+                MPCConsoleYoutubeHelp.GetyouTubeHelp(MPCYouTubeHelpURL);
+                break;
+            case "4":
                 Exit();
                 break;
 
@@ -96,7 +103,7 @@ public class ConsoleMainMenu
         string[] headerRow = csv.HeaderRecord;
 
         //Print the header
-        
+        Console.WriteLine($"File: {path}");
         ConsolePrintaTable.PrintRowSeperator();
         ConsolePrintaTable.DisplayHeanderWanted(headerRow);
 
