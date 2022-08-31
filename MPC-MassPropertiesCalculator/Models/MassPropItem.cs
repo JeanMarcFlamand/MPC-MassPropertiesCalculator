@@ -1,6 +1,6 @@
 ﻿namespace MPC_MassPropertiesCalculator.Models;
-public class MassPropItem
-{           
+public class MassPropItem : IMassPropItem
+{
     public int? Item { get; set; }
     public string? PartNumber { get; set; }
     public string? Rev { get; set; }
@@ -22,12 +22,13 @@ public class MassPropItem
     public double? MomentWithXarm
     {
         get { return _momentWithXarm; }
-        set {
+        set
+        {
             if (Xarm != null)
             {
-                _momentWithXarm = UnitWeight*Qty*Xarm;
+                _momentWithXarm = UnitWeight * Qty * Xarm;
             }
-            
+
         }
     }
 
@@ -36,7 +37,8 @@ public class MassPropItem
     public double? MomentWithYarm
     {
         get { return _momentWithYarm; }
-        set {
+        set
+        {
             if (Yarm != null)
             {
                 _momentWithYarm = UnitWeight * Qty * Yarm;
@@ -49,7 +51,8 @@ public class MassPropItem
     public double? MomentWithZarm
     {
         get { return _momentWithZarm; }
-        set {
+        set
+        {
             if (Zarm != null)
             {
                 _momentWithZarm = UnitWeight * Qty * Zarm;
@@ -62,8 +65,9 @@ public class MassPropItem
     public double? WeightWithXarm
     {
         get { return _weightWithXarm; }
-        set {
-            if (Xarm is  not null)
+        set
+        {
+            if (Xarm is not null)
             {
                 _weightWithXarm = UnitWeight * Qty;
             }
@@ -75,7 +79,8 @@ public class MassPropItem
     public double? WeightWithYarm
     {
         get { return _weightWithYarm; }
-        set {
+        set
+        {
             if (Yarm is not null)
             {
                 _weightWithYarm = UnitWeight * Qty;
@@ -88,7 +93,8 @@ public class MassPropItem
     public double? WeightWithZarm
     {
         get { return _weightWithZarm; }
-        set {
+        set
+        {
             if (Zarm is not null)
             {
                 _weightWithZarm = UnitWeight * Qty;

@@ -29,7 +29,7 @@ public class ConsolePrintaTable
                 $" {massPropItem.PartNumber,-20} |" +
                 $" {descriptionTrimmed,-11} |" +
                 $" {massPropItem.Qty,5:0} |" +
-                $" {massPropItem.UnitWeight,10:0} |" +
+                $" {massPropItem.UnitWeight,10:0.00000} |" +
                 $" {massPropItem.Xarm,10:0.0} |" +
                 $" {massPropItem.Yarm,10:0.0} |" +
                 $" {massPropItem.Zarm,10:0.0} |"));
