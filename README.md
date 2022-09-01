@@ -8,8 +8,15 @@ The app must calculate the total weight and center of gravity best so far of a l
   ## Installation Instructions:  
   ### Console Demo 
   1. Go to the release and Download the [AppPackages.zip.](https://github.com/JeanMarcFlamand/MPC-MassPropertiesCalculator/releases)
-  2. Extact files.
-  3. Lunch the MPC-MassPropertiesCalculator.Installer.appinstaller or the Index.html files.
+  - **AppPackages.Zip Warning:**
+To perform installation with Index.html or  MPC-MassPropertiesCalculator.Installer.appinstaller, make sure that the [ms-appinstaller is enable](https://www.thewindowsclub.com/ms-appinstaller-protocol-has-been-disabled)
+
+- **Alternative Install**
+
+1. Once the AppPackages.zip has been unzipped, open the folder MPC-MassPropertiesCalculator.Installer.......
+2. click on file MPC-MassPropertiesCalculator.Installer_XXXX.XXX.X_zzz.appxbundle
+    - Where XXXX.XXX.X is the application version.
+    - zzz is the machine target.
   
 
   ## Roadmap:
