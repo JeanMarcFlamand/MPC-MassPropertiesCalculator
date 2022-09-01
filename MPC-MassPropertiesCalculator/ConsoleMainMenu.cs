@@ -65,7 +65,10 @@ public class ConsoleMainMenu
             case "1":
                 //LoadFile();
                 Console.Clear();
-                LoadfileFromDialog(Dialog.FileOpen("csv", Environment.CurrentDirectory + "\\" + ScenariosDataforTestingDirectory ));
+                //Console.WriteLine(Environment.GetFolderPath(Environment.SpecialFolder.LocalizedResources));
+                //AppDomain.CurrentDomain.BaseDirectory
+                // LoadfileFromDialog(Dialog.FileOpen("csv", Environment.CurrentDirectory + "\\" + ScenariosDataforTestingDirectory));
+                LoadfileFromDialog(Dialog.FileOpen("csv", AppDomain.CurrentDomain.BaseDirectory + ScenariosDataforTestingDirectory));
                 break;
             case "2":
                 Console.Clear();
