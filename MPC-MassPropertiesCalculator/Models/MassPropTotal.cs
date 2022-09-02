@@ -114,7 +114,7 @@ public class MassPropTotal : IMassPropTotal
 
 
     private double? _weightWithYarm;
-    public double? WeighttWithYarm
+    public double? WeightWithYarm
     {
         get { return _weightWithYarm; }
     }
@@ -169,6 +169,7 @@ public class MassPropTotal : IMassPropTotal
             {
                 _xArm = _momentWithXarm / _totalWeight;
                 _xTotalMoment = _momentWithXarm;
+                _xArmForTotalMomentWithXarm = _xArm; // added on 20220902
             }
             //scenario 2 - Total weight is not = 0 and some records do not have CG defined in X axis.
             else if (_totalWeight != 0 && _totalWeight - _weightWithXarm != 0)
@@ -223,6 +224,7 @@ public class MassPropTotal : IMassPropTotal
                 _yArm = _momentWithYarm / _totalWeight;
                 // adjust the total moment by adding moment of weight not having X arm.
                 _yTotalMoment = _momentWithYarm;
+                _yArmForTotalMomentWithYarm = _yArm; // added on 20220902
             }
             // Scenario 2 - Total weight is not = 0 and some records do not have CG defined in Y axis.
             else if (_totalWeight != 0 && _totalWeight - _weightWithYarm != 0)
@@ -277,6 +279,7 @@ public class MassPropTotal : IMassPropTotal
             {
                 _zArm = _momentWithZarm / _totalWeight;
                 _zTotalMoment = _momentWithXarm;
+                _zArmForTotalMomentWithZarm = _zArm; // added on 20220802
             }
             // Scenario 2 - Total weight is not = 0 and some records do not have CG defined in Z axis.
             else if (_totalWeight != 0 && _totalWeight - _weightWithZarm != 0)

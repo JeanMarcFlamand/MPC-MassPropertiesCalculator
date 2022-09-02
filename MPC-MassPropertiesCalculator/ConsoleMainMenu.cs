@@ -121,26 +121,38 @@ public class ConsoleMainMenu
         MassPropTotal massPropTotal = new MassPropTotal();
         massPropTotal.GetMassPropTotal(records);
 
-        Console.WriteLine($"Total Weight : {massPropTotal.TotalWeight}");
-        Console.WriteLine($"Xarm :  {massPropTotal.Xarm:F3}");
-        Console.WriteLine($"Yarm :  {massPropTotal.Yarm:F3}");
-        Console.WriteLine($"Zarm :  {massPropTotal.Zarm:F3}");
-        Console.WriteLine($"Total Moment in Xarm :  {massPropTotal.XTotalMoment:F3}");
-        Console.WriteLine($"Total Moment in Yarm :  {massPropTotal.YTotalMoment:F3}");
-        Console.WriteLine($"Total Moment in Zarm :  {massPropTotal.ZTotalMoment:F3}");
+        Console.WriteLine($"        Weight   |   Xarm    |   Yarm    |   Zarm    |  XMoment  |  YMoment  |  ZMoment  |");
+        //Console.WriteLine($"Total Weight : {massPropTotal.TotalWeight} Xarm :  {massPropTotal.Xarm:F3} Yarm :  {massPropTotal.Yarm:F3} Zarm :  {massPropTotal.Zarm:F3}");
+        //Console.WriteLine($"C of G Xarm :  {massPropTotal.Xarm:F3} Yarm :  {massPropTotal.Yarm:F3} Zarm :  {massPropTotal.Zarm:F3}");
+        //Console.WriteLine($"Xarm :  {massPropTotal.Xarm:F3}");
+        //Console.WriteLine($"Yarm :  {massPropTotal.Yarm:F3}");
+        //Console.WriteLine($"Zarm :  {massPropTotal.Zarm:F3}");
+        Console.WriteLine($"Total {massPropTotal.TotalWeight,10:F3} |" +
+            $"{massPropTotal.Xarm,10:F3} |" +
+            $"{massPropTotal.Yarm,10:F3} |" +
+            $"{massPropTotal.Zarm,10:F3} |" +
+            $"{massPropTotal.XTotalMoment,10:F3} |" +
+            $"{massPropTotal.YTotalMoment,10:F3} |" +
+            $"{massPropTotal.ZTotalMoment,10:F3} |");
 
-        Console.WriteLine("Sub Calculation Results used:");
-        Console.WriteLine($"Total Weight with Xarm :  {massPropTotal.WeightWithXarm:F3}");
-        Console.WriteLine($"Total Weight with Yarm :  {massPropTotal.WeighttWithYarm:F3}");
-        Console.WriteLine($"Total Weight with Zarm :  {massPropTotal.WeightWithZarm:F3}");
+        Console.WriteLine($"\n\n Sub Calculation Results used:\n");
 
-        Console.WriteLine($"Total Moment with Xarm :  {massPropTotal.MomentWithXarm:F3}");
-        Console.WriteLine($"Total Moment with Yarm :  {massPropTotal.MomentWithYarm:F3}");
-        Console.WriteLine($"Total Moment with Zarm :  {massPropTotal.MomentWithZarm:F3}");
+        Console.WriteLine($"Total Weight with Yarm :  {massPropTotal.WeightWithYarm,10:F3}");
+        Console.WriteLine($"Total Weight with Yarm :  {massPropTotal.WeightWithYarm,10:F3}");
+        Console.WriteLine($"Total Weight with Zarm :  {massPropTotal.WeightWithZarm,10:F3} \n");
 
-        Console.WriteLine($"X arm for Weight with Xarm :  {massPropTotal.XArmTotalMomentWithXarm:F3}");
-        Console.WriteLine($"Y arm for Weight with Yarm :  {massPropTotal.YArmTotalMomentWithYarm:F3}");
-        Console.WriteLine($"Z arm for Weight with Zarm :  {massPropTotal.ZArmTotalMomentWithZarm:F3}");
+        Console.WriteLine($"Total Moment with Xarm :  {massPropTotal.MomentWithXarm,10:F3}");
+        Console.WriteLine($"Total Moment with Yarm :  {massPropTotal.MomentWithYarm,10:F3}");
+        Console.WriteLine($"Total Moment with Zarm :  {massPropTotal.MomentWithZarm,10:F3}\n");
+
+        Console.WriteLine($"X arm for Weight with Xarm :  {massPropTotal.XArmTotalMomentWithXarm,10:F3}");
+        Console.WriteLine($"Y arm for Weight with Yarm :  {massPropTotal.YArmTotalMomentWithYarm,10:F3}");
+        Console.WriteLine($"Z arm for Weight with Zarm :  {massPropTotal.ZArmTotalMomentWithZarm,10:F3} \n");
+
+        Console.WriteLine($"Total Weight without Yarm :  {massPropTotal.TotalWeight - massPropTotal.WeightWithYarm,10:F3}");
+        Console.WriteLine($"Total Weight without Yarm :  {massPropTotal.TotalWeight - massPropTotal.WeightWithYarm,10:F3}");
+        Console.WriteLine($"Total Weight without Zarm :  {massPropTotal.TotalWeight - massPropTotal.WeightWithZarm,10:F3} \n");
+
 
 
     }

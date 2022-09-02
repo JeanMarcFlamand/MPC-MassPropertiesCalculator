@@ -6,7 +6,7 @@ public interface IMassPropTotal
     double? MomentWithYarm { get; }
     double? MomentWithZarm { get; }
     double? TotalWeight { get; }
-    double? WeighttWithYarm { get; }
+    double? WeightWithYarm { get; }
     double? WeightWithXarm { get; }
     double? WeightWithZarm { get; }
     double? Xarm { get; }
