@@ -28,8 +28,7 @@ To perform installation with Index.html or  MPC-MassPropertiesCalculator.Install
   - [X] 3. Publish a demo console app with test files for those who have no programming knowledge.
   - [ ] 4. Create data layer independent of the user interface.
   - [ ] 5. Add additional user interfaces.
-     - [ ] 5.1  WPF (Data Grid).
-     - [ ] 5.2  ??? .net MAUI user interface using “DevExpress Data Grid for .NET MAUI” ???
+     - [ ] 5.1  .Net MAUI user interface using [Syncfusion ".NET MAUI DataViz & UI Controls"](https://www.syncfusion.com/maui-controls)
 
  * **Phase 2 - Nice to Have**
   - [ ] 1. Allow data correction.
