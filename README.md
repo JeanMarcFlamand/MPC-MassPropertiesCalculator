@@ -26,7 +26,7 @@ To perform installation with Index.html or  MPC-MassPropertiesCalculator.Install
      - [x] 1.1 Display the wanted data in console.
   - [X] 2.  Make the calculations taking into account the missing information.
   - [X] 3. Publish a demo console app with test files for those who have no programming knowledge.
-  - [ ] 4. Create data layer independent of the user interface.
+  - [X] 4. Create data layer independent of the user interface.
   - [ ] 5. Add additional user interfaces.
      - [ ] 5.1  .Net MAUI user interface using [Syncfusion ".NET MAUI DataViz & UI Controls"](https://www.syncfusion.com/maui-controls)
 
