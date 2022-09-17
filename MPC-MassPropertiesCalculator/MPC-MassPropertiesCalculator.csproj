@@ -52,6 +52,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MPC-HelpFromYoutubeLibrary\MPC-HelpFromYoutubeLibrary.csproj" />
+    <ProjectReference Include="..\MPCDataManagerLibrary\MPCDataManagerLibrary.csproj" />
   </ItemGroup>
 
 </Project>
