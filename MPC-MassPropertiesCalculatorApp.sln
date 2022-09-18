@@ -9,7 +9,7 @@ Project("{C7167F0D-BC9F-4E6E-AFE1-012C56B48DB5}") = "MPC-MassPropertiesCalculato
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MPC-HelpFromYoutubeLibrary", "MPC-HelpFromYoutubeLibrary\MPC-HelpFromYoutubeLibrary.csproj", "{7E3DA2F1-4D3B-419A-86B8-2CDCBA322DA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPCDataManagerLibrary", "MPCDataManagerLibrary\MPCDataManagerLibrary.csproj", "{7773F769-0FFA-4A7D-82B8-5C5B88F5F3E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MPCDataManagerLibrary", "MPCDataManagerLibrary\MPCDataManagerLibrary.csproj", "{7773F769-0FFA-4A7D-82B8-5C5B88F5F3E3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -91,8 +91,8 @@ Global
 		{7E3DA2F1-4D3B-419A-86B8-2CDCBA322DA1}.Release|ARM.Build.0 = Release|Any CPU
 		{7E3DA2F1-4D3B-419A-86B8-2CDCBA322DA1}.Release|ARM64.ActiveCfg = Release|Any CPU
 		{7E3DA2F1-4D3B-419A-86B8-2CDCBA322DA1}.Release|ARM64.Build.0 = Release|Any CPU
-		{7E3DA2F1-4D3B-419A-86B8-2CDCBA322DA1}.Release|x64.ActiveCfg = Release|Any CPU
-		{7E3DA2F1-4D3B-419A-86B8-2CDCBA322DA1}.Release|x64.Build.0 = Release|Any CPU
+		{7E3DA2F1-4D3B-419A-86B8-2CDCBA322DA1}.Release|x64.ActiveCfg = Release|x64
+		{7E3DA2F1-4D3B-419A-86B8-2CDCBA322DA1}.Release|x64.Build.0 = Release|x64
 		{7E3DA2F1-4D3B-419A-86B8-2CDCBA322DA1}.Release|x86.ActiveCfg = Release|Any CPU
 		{7E3DA2F1-4D3B-419A-86B8-2CDCBA322DA1}.Release|x86.Build.0 = Release|Any CPU
 		{7773F769-0FFA-4A7D-82B8-5C5B88F5F3E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -111,8 +111,8 @@ Global
 		{7773F769-0FFA-4A7D-82B8-5C5B88F5F3E3}.Release|ARM.Build.0 = Release|Any CPU
 		{7773F769-0FFA-4A7D-82B8-5C5B88F5F3E3}.Release|ARM64.ActiveCfg = Release|Any CPU
 		{7773F769-0FFA-4A7D-82B8-5C5B88F5F3E3}.Release|ARM64.Build.0 = Release|Any CPU
-		{7773F769-0FFA-4A7D-82B8-5C5B88F5F3E3}.Release|x64.ActiveCfg = Release|Any CPU
-		{7773F769-0FFA-4A7D-82B8-5C5B88F5F3E3}.Release|x64.Build.0 = Release|Any CPU
+		{7773F769-0FFA-4A7D-82B8-5C5B88F5F3E3}.Release|x64.ActiveCfg = Release|x64
+		{7773F769-0FFA-4A7D-82B8-5C5B88F5F3E3}.Release|x64.Build.0 = Release|x64
 		{7773F769-0FFA-4A7D-82B8-5C5B88F5F3E3}.Release|x86.ActiveCfg = Release|Any CPU
 		{7773F769-0FFA-4A7D-82B8-5C5B88F5F3E3}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
