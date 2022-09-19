@@ -35,7 +35,7 @@ public class ConsoleMainMenu
             ReadCSV(userfilepath);
             //Todo Display data in console
             FormatComment();
-            Console.WriteLine($"// Todo - Phase 1.4 Create data layer independent of the user interface." + "\r\n");
+            Console.WriteLine($"// Next Todo - Phase 1.5.1 Add .Net MAUI user interface using Syncfusion \".NET MAUI DataViz & UI Controls\"" + "\r\n");
             Console.ResetColor(); // To return colors back
             MainMenu();
         }
