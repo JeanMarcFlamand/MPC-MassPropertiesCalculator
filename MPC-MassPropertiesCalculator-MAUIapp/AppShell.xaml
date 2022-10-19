@@ -4,6 +4,7 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MPC_MassPropertiesCalculator_MAUIapp"
+    xmlns:page="clr-namespace:MPC_MassPropertiesCalculator_MAUIapp.Views"
     Shell.FlyoutBehavior="Flyout">
 
     <Shell.FlyoutHeader>
@@ -26,7 +27,7 @@
 
         <ShellContent
         Title="Test Page"
-        ContentTemplate="{DataTemplate local:TestView}"
+        ContentTemplate="{DataTemplate page:TestView}"
         Route="TestView" />
     </FlyoutItem>
 
