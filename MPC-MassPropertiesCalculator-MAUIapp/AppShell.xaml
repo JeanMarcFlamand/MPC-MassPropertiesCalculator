@@ -4,11 +4,30 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MPC_MassPropertiesCalculator_MAUIapp"
-    Shell.FlyoutBehavior="Disabled">
+    Shell.FlyoutBehavior="Flyout">
 
-    <ShellContent
+    <Shell.FlyoutHeader>
+        <VerticalStackLayout>
+            <Label Text="MPC-Calculator"></Label>
+        </VerticalStackLayout>
+    </Shell.FlyoutHeader>
+    
+    <FlyoutItem Title="MPC" FlyoutIcon="List">
+
+        <ShellContent
         Title="MPC-Calculator"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
+        
+    </FlyoutItem>
+    
+        
+    <FlyoutItem Title="test" FlyoutIcon="List">
+
+        <ShellContent
+        Title="Test Page"
+        ContentTemplate="{DataTemplate local:TestView}"
+        Route="TestView" />
+    </FlyoutItem>
 
 </Shell>
