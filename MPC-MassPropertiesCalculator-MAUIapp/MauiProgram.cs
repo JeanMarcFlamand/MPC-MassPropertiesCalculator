@@ -1,6 +1,7 @@
 ﻿using MPC_MassPropertiesCalculator_MAUIapp.ViewModels;
 using MPC_MassPropertiesCalculator_MAUIapp.Views;
 
+
 namespace MPC_MassPropertiesCalculator_MAUIapp
 {
     public static class MauiProgram
@@ -21,5 +22,7 @@ namespace MPC_MassPropertiesCalculator_MAUIapp
 
             return builder.Build();
         }
+        
     }
+    
 }

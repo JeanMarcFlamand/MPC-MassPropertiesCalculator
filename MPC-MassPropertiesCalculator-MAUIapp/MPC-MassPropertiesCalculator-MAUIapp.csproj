@@ -54,6 +54,8 @@
 
 	<ItemGroup>
 	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
+	  <PackageReference Include="MPCFilePickerMauiLibrary" Version="1.0.11-beta1" />
+	  <PackageReference Include="Syncfusion.Maui.DataGrid" Version="20.3.59" />
 	</ItemGroup>
 
 	<ItemGroup>
