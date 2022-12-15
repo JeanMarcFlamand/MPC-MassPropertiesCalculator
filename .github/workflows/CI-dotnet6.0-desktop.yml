@@ -42,8 +42,10 @@ on:
    branches:
     [ "main" ]
    paths-ignore:
-     - 'README.md'
+     - '.github/**'
      - 'docs/**'
+     - 'README.md'
+     
   # pull_request:
   #  - CodeSignonOld
 
