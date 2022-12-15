@@ -24,8 +24,10 @@ on:
       - main
       #- CodeSign
     paths-ignore:
-      - 'README.md'
-      - 'docs/**'
+     - '.github/**'
+     - 'docs/**'
+     - 'README.md'
+
     tags:
       - '*'
       
