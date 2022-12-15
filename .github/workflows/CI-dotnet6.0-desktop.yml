@@ -43,6 +43,7 @@ on:
     [ "main" ]
    paths-ignore:
      - 'README.md'
+     - 'docs/**'
   # pull_request:
   #  - CodeSignonOld
 
