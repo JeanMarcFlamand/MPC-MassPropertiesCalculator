@@ -8,6 +8,7 @@ namespace MPC_MassPropertiesCalculator_MAUIapp
         {
             InitializeComponent();
             Routing.RegisterRoute(nameof(TestView),typeof(TestView));
+            Routing.RegisterRoute(nameof(AboutmeView),typeof(AboutmeView));
             
         }
     }

@@ -5,8 +5,21 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MPC_MassPropertiesCalculator_MAUIapp"
     xmlns:page="clr-namespace:MPC_MassPropertiesCalculator_MAUIapp.Views"
+    FlyoutBackgroundColor="LightGray"
     Shell.FlyoutBehavior="Flyout">
 
+
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid ColumnDefinitions="50,*" Padding="10">
+                <Image Source="{Binding FlyoutIcon}" />
+                <Label Grid.Column="1" Text="{Binding Title}" FontAttributes="Bold" VerticalOptions="Center"/>
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+    
+    
+    
     <Shell.FlyoutHeader>
         <VerticalStackLayout>
             <Label Text="MPC-Calculator"></Label>
@@ -21,14 +34,30 @@
         Route="MainPage" />
         
     </FlyoutItem>
-    
-        
-    <FlyoutItem Title="test" FlyoutIcon="List">
+
+    <FlyoutItem Title="MPC - File Demo" FlyoutIcon="fileopen.png">
+
+        <ShellContent
+        Title="MPC - File Demo"
+        ContentTemplate="{DataTemplate page:MPCDataGridView}"
+        Route="MPCDataGridView" />
+    </FlyoutItem>
+
+
+    <FlyoutItem Title="test" FlyoutIcon="List.png">
 
         <ShellContent
         Title="Test Page"
         ContentTemplate="{DataTemplate page:TestView}"
         Route="TestView" />
+    </FlyoutItem>
+    
+    <FlyoutItem Title="About me" FlyoutIcon="aboutme.png">
+
+        <ShellContent
+        Title="Test Page"
+        ContentTemplate="{DataTemplate page:AboutmeView}"
+        Route="AboutmeView" />
     </FlyoutItem>
 
 </Shell>
