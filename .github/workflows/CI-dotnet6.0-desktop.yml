@@ -40,9 +40,12 @@ name: CI.NET 6.0 MPC-Console Demo
 on:
   push:
    branches:
-    [ "main" ]
+    - master
    paths-ignore:
+     - '.github/**'
+     - 'docs/**'
      - 'README.md'
+     
   # pull_request:
   #  - CodeSignonOld
 

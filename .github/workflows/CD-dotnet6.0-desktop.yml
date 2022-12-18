@@ -21,10 +21,13 @@ name:  CD.NET 6.0 MPC-Console Demo
 on:
   push:
     branches:
-      - main
+      - master
       #- CodeSign
     paths-ignore:
-      - 'README.md'
+     - '.github/**'
+     - 'docs/**'
+     - 'README.md'
+
     tags:
       - '*'
       
