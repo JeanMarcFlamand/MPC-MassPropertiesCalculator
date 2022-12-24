@@ -44,8 +44,7 @@
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
 
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
-
+		<MauiSplashScreen Include="Resources\Splash\logoblanc7jtfcode128x128.png" Color="#512BD4" BaseSize="128,128" />
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
 		<MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
@@ -62,41 +61,43 @@
 	  <None Remove="Resources\Images\azure_dev_ops_logo.png" />
 	  <None Remove="Resources\Images\fileopen.svg" />
 	  <None Remove="Resources\Images\github_mark.svg" />
+	  <None Remove="Resources\Images\logoblanc7jtfcode.png" />
 	  <None Remove="Resources\Images\picfile.svg" />
 	  <None Remove="Resources\Images\Stack_Overflow_icon.svg" />
-	  <None Remove="ScenariosDataforTesting\BOM MasspropCalc senario 01 - TWeightNot=0 and All CofG are defined (Basic Calcs).csv" />
-	  <None Remove="ScenariosDataforTesting\BOM MasspropCalc senario 02 - TWeightNot=0 and not All CofG are defined.csv" />
-	  <None Remove="ScenariosDataforTesting\BOM MasspropCalc senario 03 - TWeighNot=0  and all CofG are not defined.csv" />
-	  <None Remove="ScenariosDataforTesting\BOM MasspropCalc senario 04 - TWeight=0  and All CofG are defined.csv" />
-	  <None Remove="ScenariosDataforTesting\BOM MasspropCalc senario 05 - TWeight=0  and not all CofG are defined.csv" />
-	  <None Remove="ScenariosDataforTesting\BOM MasspropCalc senario 06 - TWeight=0  and all CofG are not defined.csv" />
+	  <None Remove="Resources\Raw\ScenariosDataforTesting\BOM MasspropCalc Scenario 01 - TWeightNot=0 and All CofG are defined (Basic Calcs).csv" />
+	  <None Remove="Resources\Raw\ScenariosDataforTesting\BOM MasspropCalc Scenario 02 - TWeightNot=0 and not All CofG are defined.csv" />
+	  <None Remove="Resources\Raw\ScenariosDataforTesting\BOM MasspropCalc Scenario 03 - TWeighNot=0  and all CofG are not defined.csv" />
+	  <None Remove="Resources\Raw\ScenariosDataforTesting\BOM MasspropCalc Scenario 04 - TWeight=0  and all CofG are defined.csv" />
+	  <None Remove="Resources\Raw\ScenariosDataforTesting\BOM MasspropCalc Scenario 05 - TWeight=0  and not all CofG are defined.csv" />
+	  <None Remove="Resources\Raw\ScenariosDataforTesting\BOM MasspropCalc Scenario 06 - TWeight=0  and all CofG are not defined.csv" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <EmbeddedResource Include="ScenariosDataforTesting\BOM MasspropCalc senario 01 - TWeightNot=0 and All CofG are defined (Basic Calcs).csv">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </EmbeddedResource>
-	  <EmbeddedResource Include="ScenariosDataforTesting\BOM MasspropCalc senario 02 - TWeightNot=0 and not All CofG are defined.csv">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </EmbeddedResource>
-	  <EmbeddedResource Include="ScenariosDataforTesting\BOM MasspropCalc senario 03 - TWeighNot=0  and all CofG are not defined.csv">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </EmbeddedResource>
-	  <EmbeddedResource Include="ScenariosDataforTesting\BOM MasspropCalc senario 04 - TWeight=0  and All CofG are defined.csv">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </EmbeddedResource>
-	  <EmbeddedResource Include="ScenariosDataforTesting\BOM MasspropCalc senario 05 - TWeight=0  and not all CofG are defined.csv">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </EmbeddedResource>
-	  <EmbeddedResource Include="ScenariosDataforTesting\BOM MasspropCalc senario 06 - TWeight=0  and all CofG are not defined.csv">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </EmbeddedResource>
-	</ItemGroup>
-
-	<ItemGroup>
+	  <PackageReference Include="CommunityToolkit.Maui" Version="3.1.0" />
 	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0-preview2" />
 	  <PackageReference Include="MPCFilePickerMauiLibrary" Version="1.0.11-beta1" />
 	  <PackageReference Include="Syncfusion.Maui.DataGrid" Version="20.3.61" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiAsset Update="Resources\Raw\ScenariosDataforTesting\BOM MasspropCalc Scenario 01 - TWeightNot=0 and All CofG are defined (Basic Calcs).csv">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </MauiAsset>
+	  <MauiAsset Update="Resources\Raw\ScenariosDataforTesting\BOM MasspropCalc Scenario 02 - TWeightNot=0 and not All CofG are defined.csv">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </MauiAsset>
+	  <MauiAsset Update="Resources\Raw\ScenariosDataforTesting\BOM MasspropCalc Scenario 03 - TWeighNot=0  and all CofG are not defined.csv">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </MauiAsset>
+	  <MauiAsset Update="Resources\Raw\ScenariosDataforTesting\BOM MasspropCalc Scenario 04 - TWeight=0  and all CofG are defined.csv">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </MauiAsset>
+	  <MauiAsset Update="Resources\Raw\ScenariosDataforTesting\BOM MasspropCalc Scenario 05 - TWeight=0  and not all CofG are defined.csv">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </MauiAsset>
+	  <MauiAsset Update="Resources\Raw\ScenariosDataforTesting\BOM MasspropCalc Scenario 06 - TWeight=0  and all CofG are not defined.csv">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </MauiAsset>
 	</ItemGroup>
 
 	<ItemGroup>

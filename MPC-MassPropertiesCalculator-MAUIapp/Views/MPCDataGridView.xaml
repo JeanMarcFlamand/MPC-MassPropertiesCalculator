@@ -2,18 +2,86 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MPC_MassPropertiesCalculator_MAUIapp.Views.MPCDataGridView"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              Title="MPCDataGridView">
+    <ContentPage.Resources>
+        <Style x:Key="ButtonPickFile"
+               TargetType="Button">
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="FontSize" Value="Header" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="Margin" Value="10,0,0,10" />
+            <Setter Property="LineBreakMode" Value="WordWrap" />
+            <Setter Property="VerticalOptions" Value="FillAndExpand" />
+        </Style>
+
+    </ContentPage.Resources>
+
     <VerticalStackLayout >
         
         
         <Grid ColumnDefinitions="50,*" Padding="10">
             <Image Source="picfile.png"
                    Grid.Column="0"/>
-            
+
             <Button x:Name="OpenFile"
-                Text=" Open File"
+                    Text=" Pick your File"
                     Grid.Column="1"
-                    Clicked="OpenFile_Clicked"  />
+                    Clicked="OpenFile_Clicked"/>
         </Grid>
+        <!--https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/views/expander-->
+        <toolkit:Expander x:Name="PickFileExpnd"
+                          Margin="0,0,0,10">
+            <toolkit:Expander.Header>
+                <Border Stroke="{}#a4373a"
+                StrokeThickness="4"
+                StrokeShape="RoundRectangle 40,0,0,40"
+                Background="#2B0B98"
+                Padding="16,8"
+                HorizontalOptions="Center">
+                    <Label Text="Pick BOM MasspropCalc Sample File (Tap Me)"
+                           TextColor="White"
+                           FontSize="16"
+                           FontAttributes="Bold"
+                       />
+                </Border>
+            </toolkit:Expander.Header>
+
+            <toolkit:Expander.Content BackgroundColor="00e5fc9">
+                <VerticalStackLayout 
+                                     HorizontalOptions="Start"
+                                     VerticalOptions="FillAndExpand">
+                    
+                    <Button x:Name="Demo1"
+                            Text="Scenario 01 - TWeightNot=0 and All CofG are defined (Basic Calcs).csv"
+                            Style="{StaticResource ButtonPickFile}"
+                            Clicked="Demo1_ClickedAsyn"/>
+                    <Button x:Name="Demo2"
+                            Text="Scenario 02 - TWeightNot=0 and not All CofG are defined.csv"
+                            Style="{StaticResource ButtonPickFile}"
+                            Clicked="Demo2_Clicked"/>
+                    <Button x:Name="Demo3"
+                            Text="Scenario 03 - TWeighNot=0  and all CofG are not defined.csv"
+                            Style="{StaticResource ButtonPickFile}"
+                            Clicked="Demo3_Clicked" />
+                    <Button x:Name="Demo4"
+                            Text="Scenario 04 - TWeight=0  and all CofG are defined.csv"
+                            Style="{StaticResource ButtonPickFile}"
+                            Clicked="Demo4_Clicked"/>
+                    <Button x:Name="Demo5"
+                            Text="Scenario 05 - TWeight=0  and not all CofG are defined.csv"
+                            Style="{StaticResource ButtonPickFile}"
+                            Clicked="Demo5_Clicked"/>
+                    <Button x:Name="Demo6"
+                            Text="Scenario 06 - TWeight=0  and all CofG are not defined.csv"
+                            Style="{StaticResource ButtonPickFile}"
+                            Clicked="Demo6_Clicked"/>
+                </VerticalStackLayout>
+            </toolkit:Expander.Content>
+        </toolkit:Expander>
+
+
+        <Label x:Name="FileOutput"/>
+        
     </VerticalStackLayout>
 </ContentPage>
