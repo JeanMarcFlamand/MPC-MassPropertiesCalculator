@@ -14,6 +14,23 @@
             <Setter Property="LineBreakMode" Value="WordWrap" />
             <Setter Property="VerticalOptions" Value="FillAndExpand" />
         </Style>
+        <Style x:Key="ExpanderFileSelection"
+               TargetType="toolkit:Expander">
+            <Setter Property="Margin" Value="0,0,0,10"/>
+            
+
+
+        </Style>
+
+        <Style x:Key="BorderExpanderFileSelection"
+               TargetType="Border">
+            <Setter Property="Stroke" Value="#a4373a"/>
+            <Setter Property="StrokeThickness" Value="4"/>
+            <Setter Property="StrokeShape" Value="RoundRectangle 0,0,40,40"/>
+            <Setter Property="Background" Value="#6E6E6E"/>
+            <Setter Property="Padding" Value="16,8"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+        </Style>
 
     </ContentPage.Resources>
 
@@ -31,14 +48,10 @@
         </Grid>
         <!--https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/views/expander-->
         <toolkit:Expander x:Name="PickFileExpnd"
-                          Margin="0,0,0,10">
+                          Style="{StaticResource ExpanderFileSelection}">
             <toolkit:Expander.Header>
-                <Border Stroke="{}#a4373a"
-                StrokeThickness="4"
-                StrokeShape="RoundRectangle 40,0,0,40"
-                Background="#2B0B98"
-                Padding="16,8"
-                HorizontalOptions="Center">
+                <Border 
+                    Style="{StaticResource BorderExpanderFileSelection}">
                     <Label Text="Pick BOM MasspropCalc Sample File (Tap Me)"
                            TextColor="White"
                            FontSize="16"
@@ -47,7 +60,7 @@
                 </Border>
             </toolkit:Expander.Header>
 
-            <toolkit:Expander.Content BackgroundColor="00e5fc9">
+            <toolkit:Expander.Content  BackgroundColor="00e5fc9">
                 <VerticalStackLayout 
                                      HorizontalOptions="Start"
                                      VerticalOptions="FillAndExpand">
@@ -55,7 +68,7 @@
                     <Button x:Name="Demo1"
                             Text="Scenario 01 - TWeightNot=0 and All CofG are defined (Basic Calcs).csv"
                             Style="{StaticResource ButtonPickFile}"
-                            Clicked="Demo1_ClickedAsyn"/>
+                            Clicked="Demo1_Clicked"/>
                     <Button x:Name="Demo2"
                             Text="Scenario 02 - TWeightNot=0 and not All CofG are defined.csv"
                             Style="{StaticResource ButtonPickFile}"

@@ -29,7 +29,7 @@ public partial class MPCDataGridView : ContentPage
 
     }
 
-    private void Demo1_ClickedAsyn(object sender, EventArgs e)
+    private void Demo1_Clicked(object sender, EventArgs e)
     {
 
         var filename = "BOM MasspropCalc " + Demo1.Text;
