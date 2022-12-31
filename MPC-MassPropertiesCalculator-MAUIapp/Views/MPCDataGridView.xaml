@@ -17,11 +17,8 @@
         <Style x:Key="ExpanderFileSelection"
                TargetType="toolkit:Expander">
             <Setter Property="Margin" Value="0,0,0,10"/>
-            
-
 
         </Style>
-
         <Style x:Key="BorderExpanderFileSelection"
                TargetType="Border">
             <Setter Property="Stroke" Value="#a4373a"/>
@@ -31,12 +28,10 @@
             <Setter Property="Padding" Value="16,8"/>
             <Setter Property="HorizontalOptions" Value="Center"/>
         </Style>
-
     </ContentPage.Resources>
 
     <VerticalStackLayout >
-        
-        
+               
         <Grid ColumnDefinitions="50,*" Padding="10">
             <Image Source="picfile.png"
                    Grid.Column="0"/>
@@ -46,6 +41,7 @@
                     Grid.Column="1"
                     Clicked="OpenFile_Clicked"/>
         </Grid>
+        
         <!--https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/views/expander-->
         <toolkit:Expander x:Name="PickFileExpnd"
                           Style="{StaticResource ExpanderFileSelection}">
