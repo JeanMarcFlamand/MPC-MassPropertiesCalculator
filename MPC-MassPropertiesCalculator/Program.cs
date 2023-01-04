@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using MPC_MassPropertiesCalculator.Models;
+using MPCDataManagerLibrary.Models;
 
 class Program
 {

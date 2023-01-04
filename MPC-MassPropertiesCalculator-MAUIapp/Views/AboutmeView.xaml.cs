@@ -49,6 +49,7 @@ public partial class AboutmeView : ContentPage
         catch (Exception ex)
         {
             // An unexpected error occured. No browser may be installed on the device.
+            Console.WriteLine($"No browser may be installed - Exception Handler: {ex}");
         }
     }
 

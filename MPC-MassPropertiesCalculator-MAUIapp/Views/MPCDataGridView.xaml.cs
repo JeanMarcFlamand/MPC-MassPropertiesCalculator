@@ -14,7 +14,7 @@ public partial class MPCDataGridView : ContentPage
 
     private async void OpenFile_Clicked(object sender, EventArgs e)
     {
-        string? filePath = await PickTxtFile.GetFilePathAsync();
+        var filePath = await PickTxtFile.GetFilePathAsync();
 
         if (File.Exists(filePath))
         {
