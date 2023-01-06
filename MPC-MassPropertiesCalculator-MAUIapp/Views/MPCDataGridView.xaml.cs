@@ -1,7 +1,11 @@
+using CsvHelper;
 using Microsoft.Maui.Controls.PlatformConfiguration;
+using MPC_MassPropertiesCalculator_MAUIapp.ViewModels;
+using MPCDataManagerLibrary.Models;
 using MPCFilePickerMauiLibrary;
-
-
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
 
 namespace MPC_MassPropertiesCalculator_MAUIapp.Views;
 
@@ -71,6 +75,10 @@ public partial class MPCDataGridView : ContentPage
         char s = Path.DirectorySeparatorChar;
         string mpcCFile = await LoadMauiAssetStream($"{Constants.ScenariosDataforTestingDirectory}{s}{fileName}");
 
+       
+
+        await LoadRecords($"{Constants.ScenariosDataforTestingDirectory}{s}{fileName}");
+
         FileOutput.Text = mpcCFile;
         PickFileExpnd.IsExpanded = false;
 
@@ -93,9 +101,18 @@ public partial class MPCDataGridView : ContentPage
     {
         using var stream = await FileSystem.OpenAppPackageFileAsync(filePath);
         using var reader = new StreamReader(stream);
+                
         var contents = await reader.ReadToEndAsync();
+        
         return contents;
     }
 
-   
+    async Task LoadRecords(string filePath)
+    {
+        using var stream = await FileSystem.OpenAppPackageFileAsync(filePath);
+        using StreamReader reader = new StreamReader(stream);
+        using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
+        MPCItemsdataGrid.ItemsSource = csv.GetRecords<MassPropItem>().ToList();
+        return;
+    }
 }

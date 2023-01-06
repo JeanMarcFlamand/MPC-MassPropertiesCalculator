@@ -3,12 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MPC_MassPropertiesCalculator_MAUIapp.Views.MPCDataGridView"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:datagrid="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
+             xmlns:local="clr-namespace:MPCDataManagerLibrary.Models;assembly=MPCDataManagerLibrary"
              Title="MPCDataGridView">
     <ContentPage.Resources>
         <Style x:Key="ButtonPickFile"
                TargetType="Button">
             <Setter Property="HorizontalOptions" Value="Center" />
-            <Setter Property="FontSize" Value="Header" />
+            <Setter Property="FontSize" Value="Body" />
             <Setter Property="TextColor" Value="White" />
             <Setter Property="Margin" Value="10,0,0,10" />
             <Setter Property="LineBreakMode" Value="WordWrap" />
@@ -30,9 +32,14 @@
         </Style>
     </ContentPage.Resources>
 
+    <!--<ContentPage.BindingContext>
+        <local:MassPropItem  x:Name="records" />
+    </ContentPage.BindingContext>-->
+
+
     <VerticalStackLayout >
                
-        <Grid ColumnDefinitions="50,*" Padding="10">
+        <!--<Grid ColumnDefinitions="50,*" Padding="10">
             <Image Source="picfile.png"
                    Grid.Column="0"/>
 
@@ -40,10 +47,11 @@
                     Text=" Pick your File"
                     Grid.Column="1"
                     Clicked="OpenFile_Clicked"/>
-        </Grid>
+        </Grid>-->
         
         <!--https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/views/expander-->
         <toolkit:Expander x:Name="PickFileExpnd"
+                          HorizontalOptions="Start"
                           Style="{StaticResource ExpanderFileSelection}">
             <toolkit:Expander.Header>
                 <Border 
@@ -90,6 +98,12 @@
         </toolkit:Expander>
 
 
+
+        <datagrid:SfDataGrid x:Name="MPCItemsdataGrid"
+                          SelectionMode="Single">
+        </datagrid:SfDataGrid>
+
+        <Label Text="RAW DATA in file"/>
         <Label x:Name="FileOutput"/>
         
     </VerticalStackLayout>
