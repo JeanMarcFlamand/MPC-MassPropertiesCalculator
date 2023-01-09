@@ -82,6 +82,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Views\MPCMassPropItemsView.xaml.cs">
+	    <DependentUpon>MPCMassPropItemsView.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiAsset Update="Resources\Raw\ScenariosDataforTesting\BOM MasspropCalc Scenario 01 - TWeightNot=0 and All CofG are defined (Basic Calcs).csv">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </MauiAsset>
@@ -112,7 +118,7 @@
 	  <MauiXaml Update="Views\AboutmeView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\MPCDataGridView.xaml">
+	  <MauiXaml Update="Views\MPCMassPropItemsView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\TestView.xaml">

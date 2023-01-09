@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MPC_MassPropertiesCalculator_MAUIapp.Views.MPCDataGridView"
+             x:Class="MPC_MassPropertiesCalculator_MAUIapp.Views.MPCMassPropItemsView"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              xmlns:datagrid="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
-             xmlns:local="clr-namespace:MPCDataManagerLibrary.Models;assembly=MPCDataManagerLibrary"
+             xmlns:local="clr-namespace:MPC_MassPropertiesCalculator_MAUIapp.ViewModels"
              Title="MPCDataGridView">
     <ContentPage.Resources>
         <Style x:Key="ButtonPickFile"
@@ -32,9 +32,9 @@
         </Style>
     </ContentPage.Resources>
 
-    <!--<ContentPage.BindingContext>
-        <local:MassPropItem  x:Name="records" />
-    </ContentPage.BindingContext>-->
+    <ContentPage.BindingContext>
+        <local:MPCMassPropItemsViewModel x:Name="viewModel" />
+    </ContentPage.BindingContext>
 
 
     <VerticalStackLayout >
@@ -98,8 +98,9 @@
         </toolkit:Expander>
 
 
-
-        <datagrid:SfDataGrid x:Name="MPCItemsdataGrid"
+        <Label Text="DATA Grid Display"/>
+        
+        <datagrid:SfDataGrid x:Name="MPCItemsDaGr"
                           SelectionMode="Single">
         </datagrid:SfDataGrid>
 

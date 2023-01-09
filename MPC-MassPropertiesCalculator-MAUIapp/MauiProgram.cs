@@ -17,7 +17,8 @@ namespace MPC_MassPropertiesCalculator_MAUIapp
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
             }).UseMauiCommunityToolkit();
 
-            builder.Services.AddSingleton<MPCDataGridView>();
+            builder.Services.AddSingleton<MPCMassPropItemsView>();
+            builder.Services.AddSingleton<MPCMassPropItemsViewModel>();
             builder.Services.AddSingleton<TestView>();
             builder.Services.AddSingleton<TestViewModel>();
             builder.Services.AddSingleton<AboutmeView>();

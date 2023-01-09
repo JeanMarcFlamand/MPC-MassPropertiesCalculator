@@ -39,7 +39,7 @@
 
         <ShellContent
         Title="MPC - File Demo"
-        ContentTemplate="{DataTemplate page:MPCDataGridView}"
+        ContentTemplate="{DataTemplate page:MPCMassPropItemsView}"
         Route="MPCDataGridView" />
     </FlyoutItem>
 

@@ -1,20 +1,23 @@
 using CsvHelper;
-using Microsoft.Maui.Controls.PlatformConfiguration;
 using MPC_MassPropertiesCalculator_MAUIapp.ViewModels;
 using MPCDataManagerLibrary.Models;
 using MPCFilePickerMauiLibrary;
-using System.Collections.Generic;
+using Syncfusion.Maui.DataGrid;
 using System.Globalization;
-using System.Linq;
 
 namespace MPC_MassPropertiesCalculator_MAUIapp.Views;
 
-public partial class MPCDataGridView : ContentPage
+public partial class MPCMassPropItemsView : ContentPage
 {
-	public MPCDataGridView()
+	public MPCMassPropItemsView() //Constructor
 	{
 		InitializeComponent();
-	}
+        SfDataGrid MPCItemsDaGr = new();
+
+        MPCMassPropItemsViewModel viewModel = new();
+        MPCItemsDaGr.ItemsSource = viewModel.MassPropItemsCollection;
+
+    }
 
     private async void OpenFile_Clicked(object sender, EventArgs e)
     {
@@ -112,7 +115,7 @@ public partial class MPCDataGridView : ContentPage
         using var stream = await FileSystem.OpenAppPackageFileAsync(filePath);
         using StreamReader reader = new StreamReader(stream);
         using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
-        MPCItemsdataGrid.ItemsSource = csv.GetRecords<MassPropItem>().ToList();
+        MPCItemsDaGr.ItemsSource = csv.GetRecords<MassPropItem>().ToList();
         return;
     }
 }
