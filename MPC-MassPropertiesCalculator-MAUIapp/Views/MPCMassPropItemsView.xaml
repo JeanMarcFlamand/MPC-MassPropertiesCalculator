@@ -101,7 +101,8 @@
         <Label Text="DATA Grid Display"/>
         
         <datagrid:SfDataGrid x:Name="MPCItemsDaGr"
-                          SelectionMode="Single">
+                          SelectionMode="Single"
+                             ItemsSource="{Binding MassPropItemsCollection}">
         </datagrid:SfDataGrid>
 
         <Label Text="RAW DATA in file"/>

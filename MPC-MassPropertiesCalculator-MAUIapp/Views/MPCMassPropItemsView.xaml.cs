@@ -41,6 +41,7 @@ public partial class MPCMassPropItemsView : ContentPage
 
         var filename = "BOM MasspropCalc " + Demo1.Text;
         OpenDemoFile(filename);
+        //Todo - not working viewModel.GetMasspropertyRecords(filename);
     }
 
     private void Demo2_Clicked(object sender, EventArgs e)
