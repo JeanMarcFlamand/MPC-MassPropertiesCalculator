@@ -30,14 +30,27 @@
             <Setter Property="Padding" Value="16,8"/>
             <Setter Property="HorizontalOptions" Value="Center"/>
         </Style>
+
+        <Style 
+            TargetType="datagrid:DataGridHeaderCell">
+            <Setter Property="Background" Value="#bb4859"/>
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontFamily" Value="Consola"/>
+        </Style>
+
     </ContentPage.Resources>
 
+    
     <ContentPage.BindingContext>
         <local:MPCMassPropItemsViewModel x:Name="viewModel" />
     </ContentPage.BindingContext>
 
 
-    <VerticalStackLayout >
+    <VerticalStackLayout
+        VerticalOptions="StartAndExpand">
+        
                
         <!--<Grid ColumnDefinitions="50,*" Padding="10">
             <Image Source="picfile.png"
@@ -99,14 +112,14 @@
 
 
         <Label Text="DATA Grid Display"/>
-        
+
         <datagrid:SfDataGrid x:Name="MPCItemsDaGr"
-                          SelectionMode="Single"
-                             ItemsSource="{Binding MassPropItemsCollection}">
+                             SelectionMode="Single"
+                             MinimumHeightRequest="500"
+                             VerticalOptions="StartAndExpand"
+                             HorizontalScrollBarVisibility="Default"
+                             ItemsSource="{Binding massPropItemsCollection}">
         </datagrid:SfDataGrid>
 
-        <Label Text="RAW DATA in file"/>
-        <Label x:Name="FileOutput"/>
-        
     </VerticalStackLayout>
 </ContentPage>

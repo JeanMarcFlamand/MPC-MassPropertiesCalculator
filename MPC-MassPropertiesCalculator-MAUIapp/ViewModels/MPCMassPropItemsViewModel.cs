@@ -10,7 +10,7 @@ public class MPCMassPropItemsViewModel
 {
     private ObservableCollection<MassPropItem> massPropItems;
 
-    public ObservableCollection<MassPropItem> MassPropItemsCollection
+    public ObservableCollection<MassPropItem> massPropItemsCollection
     {
         get { return massPropItems; ; }
         set { massPropItems = value; }
@@ -31,10 +31,9 @@ public class MPCMassPropItemsViewModel
         using var stream = await FileSystem.OpenAppPackageFileAsync($"{Constants.ScenariosDataforTestingDirectory}{s}{fileName}");
         using StreamReader reader = new StreamReader(stream);
         using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
-        //string[] headerRow = csv.HeaderRecord;
-
+        
         // was  MPCItemsDaGr.ItemsSource = csv.GetRecords<MassPropItem>().ToList();
         // is now but not working
-        MassPropItemsCollection = (ObservableCollection<MassPropItem>)csv.GetRecords<List<MassPropItem>>();
+        massPropItemsCollection = (ObservableCollection<MassPropItem>)csv.GetRecords<MassPropItem>();
     }
 }

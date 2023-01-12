@@ -15,7 +15,7 @@ public partial class MPCMassPropItemsView : ContentPage
         SfDataGrid MPCItemsDaGr = new();
 
         MPCMassPropItemsViewModel viewModel = new();
-        MPCItemsDaGr.ItemsSource = viewModel.MassPropItemsCollection;
+        MPCItemsDaGr.ItemsSource = viewModel.massPropItemsCollection;
 
     }
 
@@ -40,8 +40,10 @@ public partial class MPCMassPropItemsView : ContentPage
     {
 
         var filename = "BOM MasspropCalc " + Demo1.Text;
+        //Todo -Move Implicit code in to MPCMassPropItemsViewModel
+        // Replace OpenDemoFile(filename)  by viewModel.GetMasspropertyRecords(filename);
         OpenDemoFile(filename);
-        //Todo - not working viewModel.GetMasspropertyRecords(filename);
+        // viewModel.GetMasspropertyRecords(filename);
     }
 
     private void Demo2_Clicked(object sender, EventArgs e)
@@ -79,14 +81,9 @@ public partial class MPCMassPropItemsView : ContentPage
         char s = Path.DirectorySeparatorChar;
         string mpcCFile = await LoadMauiAssetStream($"{Constants.ScenariosDataforTestingDirectory}{s}{fileName}");
 
-       
+       await LoadRecords($"{Constants.ScenariosDataforTestingDirectory}{s}{fileName}");
 
-        await LoadRecords($"{Constants.ScenariosDataforTestingDirectory}{s}{fileName}");
-
-        FileOutput.Text = mpcCFile;
-        PickFileExpnd.IsExpanded = false;
-
-        await DisplayAlert("ReadAllText", $"Succesfull operation", "OK").ConfigureAwait(false);
+        PickFileExpnd.IsExpanded = false;      
 
     }
 
