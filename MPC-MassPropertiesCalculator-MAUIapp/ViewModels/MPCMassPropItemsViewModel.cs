@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Globalization;
+using System.Threading.Channels;
 
 namespace MPC_MassPropertiesCalculator_MAUIapp.ViewModels;
 
@@ -12,6 +13,12 @@ public class MPCMassPropItemsViewModel : INotifyPropertyChanged
 {
     private ObservableCollection<MassPropItem> massPropItems;
 
+
+    //To reload the ItemsSource of the DataGrid i.e., massPropItemsCollection at the run time,
+    //the ViewModel class has to be inherited from INotifyPropertyChanged interface.
+    //This allows the DataGrid to be automatically updated when the data in the massPropItemsCollection changes.
+    //In this case, the ItemsSource of the DataGrid is bound to the massPropItemsCollection property,
+    //which means that when the collection is updated, the DataGrid will be updated with the new data as well.
     public ObservableCollection<MassPropItem> massPropItemsCollection
     {
         get { return massPropItems; ; }
