@@ -42,38 +42,44 @@ public partial class MPCMassPropItemsView : ContentPage
         var filename = "BOM MasspropCalc " + Demo1.Text;
         //Todo -Move Implicit code in to MPCMassPropItemsViewModel
         // Replace OpenDemoFile(filename)  by viewModel.GetMasspropertyRecords(filename);
-        OpenDemoFile(filename);
-        // viewModel.GetMasspropertyRecords(filename);
+        //OpenDemoFile(filename);
+        viewModel.GetMasspropertyRecords(filename);
+        PickFileExpnd.IsExpanded = false;
     }
 
     private void Demo2_Clicked(object sender, EventArgs e)
     {
         var filename = "BOM MasspropCalc " + Demo2.Text;
-        OpenDemoFile(filename);
+        viewModel.GetMasspropertyRecords(filename);
+        PickFileExpnd.IsExpanded = false;
     }
 
     private void Demo3_Clicked(object sender, EventArgs e)
     {
         var filename = "BOM MasspropCalc " + Demo3.Text;
-        OpenDemoFile(filename);
+        viewModel.GetMasspropertyRecords(filename);
+        PickFileExpnd.IsExpanded = false;
     }
 
     private void Demo4_Clicked(object sender, EventArgs e)
     {
         var filename = "BOM MasspropCalc " + Demo4.Text;
-        OpenDemoFile(filename);
+        viewModel.GetMasspropertyRecords(filename);
+        PickFileExpnd.IsExpanded = false;
     }
 
     private void Demo5_Clicked(object sender, EventArgs e)
     {
         var filename = "BOM MasspropCalc " + Demo5.Text;
-        OpenDemoFile(filename);
+        viewModel.GetMasspropertyRecords(filename);
+        PickFileExpnd.IsExpanded = false;
     }
 
     private void Demo6_Clicked(object sender, EventArgs e)
     {
         var filename = "BOM MasspropCalc " + Demo6.Text;
-        OpenDemoFile(filename);
+        viewModel.GetMasspropertyRecords(filename);
+        PickFileExpnd.IsExpanded = false;
     }
 
     public async void OpenDemoFile(string fileName)

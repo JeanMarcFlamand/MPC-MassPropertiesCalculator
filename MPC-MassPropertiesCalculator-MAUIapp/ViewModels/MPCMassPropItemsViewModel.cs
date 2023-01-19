@@ -1,20 +1,33 @@
-﻿using CsvHelper;
+﻿using CommunityToolkit.Maui.Core.Extensions;
+using CsvHelper;
 using MPCDataManagerLibrary.Models;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Globalization;
 
 namespace MPC_MassPropertiesCalculator_MAUIapp.ViewModels;
 
-public class MPCMassPropItemsViewModel
+public class MPCMassPropItemsViewModel : INotifyPropertyChanged
 {
     private ObservableCollection<MassPropItem> massPropItems;
 
     public ObservableCollection<MassPropItem> massPropItemsCollection
     {
         get { return massPropItems; ; }
-        set { massPropItems = value; }
+        set
+        {
+            massPropItems = value;
+            NotifyPropertyChanged(nameof(massPropItemsCollection));
+        }
     }
+
+    public event PropertyChangedEventHandler PropertyChanged;
+    private void NotifyPropertyChanged(String propertyName)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    }
+
 
 
     public MPCMassPropItemsViewModel() //Constructor
@@ -34,6 +47,6 @@ public class MPCMassPropItemsViewModel
         
         // was  MPCItemsDaGr.ItemsSource = csv.GetRecords<MassPropItem>().ToList();
         // is now but not working
-        massPropItemsCollection = (ObservableCollection<MassPropItem>)csv.GetRecords<MassPropItem>();
+        massPropItemsCollection = csv.GetRecords<MassPropItem>().ToObservableCollection();
     }
 }
