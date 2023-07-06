@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MPC_MassPropertiesCalculator_MAUIapp.Views.AboutmeView"
+             
+             Title="About me">
+    <ContentPage.Resources>
+        <Style x:Key="ButtonWhyteStyle"
+               TargetType="Button">
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="FontSize" Value="Header" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="Margin" Value="0,0,0,30" />
+        </Style>
+
+        <Style x:Key="ImageButtonStyle"
+               TargetType="Button">
+            <Setter Property="Margin" Value="30,0,30,30" />
+        </Style>
+
+    </ContentPage.Resources>
+    
+    <VerticalStackLayout>
+       
+            <Label 
+            Text="Welcome to ABOUT Me!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        
+        <HorizontalStackLayout>
+                <Grid ColumnDefinitions="100,500,*" Padding="10">
+
+                <ImageButton x:Name="LinkedIn"
+                         Source="In_Blue_128.png"
+                         Style="{StaticResource ImageButtonStyle }"
+                         Grid.Column="0"
+                         Clicked="LinkedIn_Clicked"/>
+                    
+                <Button 
+                    Style="{StaticResource ButtonWhyteStyle}"
+                    Text=" My LinkedIn profile"
+                    Grid.Column="1"
+                    Clicked="LinkedIn_Clicked"/>
+                </Grid>
+            </HorizontalStackLayout>
+
+        <HorizontalStackLayout>
+            <ImageButton x:Name="GitHub"
+                         Source="github_mark.png"
+                         Style="{StaticResource ImageButtonStyle }"
+                         Clicked="GitHub_Clicked"/>
+
+            <Button 
+                Style="{StaticResource ButtonWhyteStyle}"
+                Text=" My GitHub Repository"
+                Clicked="GitHub_Clicked"/>
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout>
+            <ImageButton x:Name="StackOverFlow"
+                         Source="stack_overflow_icon.png"
+                         Style="{StaticResource ImageButtonStyle }"
+                         Clicked="StackOverFlow_Clicked"/>
+
+            <Button 
+                Style="{StaticResource ButtonWhyteStyle}"
+                Text=" My Stackoverflow Profile"
+                Clicked="StackOverFlow_Clicked"/>
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout>
+            <ImageButton x:Name="AzureDevOps"
+                         Source="azure_dev_ops_logo.png"
+                         Style="{StaticResource ImageButtonStyle }"
+                         Clicked="AzureDevOps_Clicked"/>
+
+            <Button 
+                Style="{StaticResource ButtonWhyteStyle}"
+                Text=" My Azure DevOps Repository"
+                Clicked="AzureDevOps_Clicked"/>
+        </HorizontalStackLayout>
+
+
+
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,4 +1,4 @@
-﻿using MPC_MassPropertiesCalculator.Models;
+﻿using MPCDataManagerLibrary.Models;
 using MPCHelpFromYoutubeLibrary;
 
 namespace MPC_MassPropertiesCalculator;
@@ -111,7 +111,7 @@ public class ConsoleMainMenu
         ConsolePrintaTable.DisplayHeanderWanted(headerRow);
 
         //Read the Data - No header
-        var records = csv.GetRecords<Models.MassPropItem>().ToList();
+        var records = csv.GetRecords<MassPropItem>().ToList();
                 
         //Print the data
         ConsolePrintaTable.PrintRowSeperator();

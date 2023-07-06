@@ -1,5 +1,5 @@
 ﻿using Microsoft.Toolkit;
-using MPC_MassPropertiesCalculator.Models;
+using MPCDataManagerLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

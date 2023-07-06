@@ -7,3 +7,4 @@ global using System.Linq;
 global using NativeFileDialogSharp;
 global using System.Diagnostics;
 global using System.Reflection;
+global using MPCDataManagerLibrary.Models;

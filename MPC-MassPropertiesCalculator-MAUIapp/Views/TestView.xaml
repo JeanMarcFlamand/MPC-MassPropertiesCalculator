@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MPC_MassPropertiesCalculator_MAUIapp.Views.TestView"
+             Title="TestView">
+    <!--<VerticalStackLayout>
+        <Label 
+            Text="This is the test Views Pages"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        
+    </VerticalStackLayout>-->
+
+    <StackLayout x:Name="RibbonControl" BackgroundColor="Gray">
+        <!-- Define the tab bar -->
+        <StackLayout x:Name="TabBar" Orientation="Horizontal" BackgroundColor="White">
+            <Button Text="Tab 1" />
+            <Button Text="Tab 2" />
+            <Button Text="Tab 3" />
+        </StackLayout>
+
+        <!-- Define the content area -->
+        <StackLayout x:Name="ContentArea" BackgroundColor="White">
+            <!-- Define the groups -->
+            <StackLayout x:Name="Group1" Orientation="Horizontal">
+                <Button Text="Button 1" />
+                <Button Text="Button 2" />
+            </StackLayout>
+            <StackLayout x:Name="Group2" Orientation="Horizontal">
+                <Button Text="Button 3" />
+                <Button Text="Button 4" />
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
