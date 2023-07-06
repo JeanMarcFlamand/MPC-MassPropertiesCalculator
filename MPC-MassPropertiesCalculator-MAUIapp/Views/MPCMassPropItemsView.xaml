@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MPC_MassPropertiesCalculator_MAUIapp.Views.MPCMassPropItemsView"
-             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-             xmlns:datagrid="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
-             xmlns:local="clr-namespace:MPC_MassPropertiesCalculator_MAUIapp.ViewModels"
-             Title="MPCDataGridView">
+<ContentPage
+    x:Class="MPC_MassPropertiesCalculator_MAUIapp.Views.MPCMassPropItemsView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:datagrid="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
+    xmlns:local="clr-namespace:MPC_MassPropertiesCalculator_MAUIapp.ViewModels"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    Title="MPCDataGridView">
     <ContentPage.Resources>
-        <Style x:Key="ButtonPickFile"
-               TargetType="Button">
+        <Style x:Key="ButtonPickFile" TargetType="Button">
             <Setter Property="HorizontalOptions" Value="Center" />
             <Setter Property="FontSize" Value="Body" />
             <Setter Property="TextColor" Value="White" />
@@ -16,110 +16,110 @@
             <Setter Property="LineBreakMode" Value="WordWrap" />
             <Setter Property="VerticalOptions" Value="FillAndExpand" />
         </Style>
-        <Style x:Key="ExpanderFileSelection"
-               TargetType="toolkit:Expander">
-            <Setter Property="Margin" Value="0,0,0,10"/>
 
+        <Style x:Key="ExpanderFileSelection" TargetType="toolkit:Expander">
+            <Setter Property="Margin" Value="0,0,0,10" />
         </Style>
-        <Style x:Key="BorderExpanderFileSelection"
-               TargetType="Border">
-            <Setter Property="Stroke" Value="#a4373a"/>
-            <Setter Property="StrokeThickness" Value="4"/>
-            <Setter Property="StrokeShape" Value="RoundRectangle 0,0,40,40"/>
-            <Setter Property="Background" Value="#6E6E6E"/>
-            <Setter Property="Padding" Value="16,8"/>
-            <Setter Property="HorizontalOptions" Value="Center"/>
+        <Style x:Key="BorderExpanderFileSelection" TargetType="Border">
+            <Setter Property="Stroke" Value="#a4373a" />
+            <Setter Property="StrokeThickness" Value="4" />
+            <Setter Property="StrokeShape" Value="RoundRectangle 0,0,40,40" />
+            <Setter Property="Background" Value="#6E6E6E" />
+            <Setter Property="Padding" Value="16,8" />
+            <Setter Property="HorizontalOptions" Value="Center" />
         </Style>
-
-        <Style 
-            TargetType="datagrid:DataGridHeaderCell">
-            <Setter Property="Background" Value="#bb4859"/>
-            <Setter Property="TextColor" Value="White"/>
-            <Setter Property="FontAttributes" Value="Bold"/>
-            <Setter Property="FontSize" Value="14"/>
-            <Setter Property="FontFamily" Value="Consola"/>
+        <Style TargetType="datagrid:DataGridHeaderCell">
+            <Setter Property="Background" Value="#bb4859" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="FontFamily" Value="Consola" />
         </Style>
 
     </ContentPage.Resources>
 
-    
+
     <ContentPage.BindingContext>
         <local:MPCMassPropItemsViewModel x:Name="viewModel" />
     </ContentPage.BindingContext>
 
 
-    <VerticalStackLayout
-        VerticalOptions="StartAndExpand">
-        
-               
-        <!--<Grid ColumnDefinitions="50,*" Padding="10">
-            <Image Source="picfile.png"
-                   Grid.Column="0"/>
+    <VerticalStackLayout Spacing="6"
+                         VerticalOptions="StartAndExpand">
 
-            <Button x:Name="OpenFile"
-                    Text=" Pick your File"
-                    Grid.Column="1"
-                    Clicked="OpenFile_Clicked"/>
-        </Grid>-->
-        
-        <!--https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/views/expander-->
-        <toolkit:Expander x:Name="PickFileExpnd"
-                          HorizontalOptions="Start"
-                          Style="{StaticResource ExpanderFileSelection}">
+
+        <!--  https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/views/expander  -->
+        <toolkit:Expander
+            x:Name="PickFileExpnd"
+            HorizontalOptions="Start"
+            Style="{StaticResource ExpanderFileSelection}">
             <toolkit:Expander.Header>
-                <Border 
-                    Style="{StaticResource BorderExpanderFileSelection}">
-                    <Label Text="Pick BOM MasspropCalc Sample File (Tap Me)"
-                           TextColor="White"
-                           FontSize="16"
-                           FontAttributes="Bold"
-                       />
+                <Border Style="{StaticResource BorderExpanderFileSelection}">
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="16"
+                        Text="Pick BOM MasspropCalc Sample File (Tap Me)"
+                        TextColor="White" />
                 </Border>
             </toolkit:Expander.Header>
 
-            <toolkit:Expander.Content  BackgroundColor="00e5fc9">
-                <VerticalStackLayout 
-                                     HorizontalOptions="Start"
-                                     VerticalOptions="FillAndExpand">
-                    
-                    <Button x:Name="Demo1"
-                            Text="Scenario 01 - TWeightNot=0 and All CofG are defined (Basic Calcs).csv"
-                            Style="{StaticResource ButtonPickFile}"
-                            Clicked="Demo1_Clicked"/>
-                    <Button x:Name="Demo2"
-                            Text="Scenario 02 - TWeightNot=0 and not All CofG are defined.csv"
-                            Style="{StaticResource ButtonPickFile}"
-                            Clicked="Demo2_Clicked"/>
-                    <Button x:Name="Demo3"
-                            Text="Scenario 03 - TWeighNot=0  and all CofG are not defined.csv"
-                            Style="{StaticResource ButtonPickFile}"
-                            Clicked="Demo3_Clicked" />
-                    <Button x:Name="Demo4"
-                            Text="Scenario 04 - TWeight=0  and all CofG are defined.csv"
-                            Style="{StaticResource ButtonPickFile}"
-                            Clicked="Demo4_Clicked"/>
-                    <Button x:Name="Demo5"
-                            Text="Scenario 05 - TWeight=0  and not all CofG are defined.csv"
-                            Style="{StaticResource ButtonPickFile}"
-                            Clicked="Demo5_Clicked"/>
-                    <Button x:Name="Demo6"
-                            Text="Scenario 06 - TWeight=0  and all CofG are not defined.csv"
-                            Style="{StaticResource ButtonPickFile}"
-                            Clicked="Demo6_Clicked"/>
+            <toolkit:Expander.Content BackgroundColor="00e5fc9">
+                <VerticalStackLayout HorizontalOptions="Start" VerticalOptions="FillAndExpand">
+
+                    <Button
+                        x:Name="Demo1"
+                        Clicked="Demo1_Clicked"
+                        Style="{StaticResource ButtonPickFile}"
+                        Text="Scenario 01 - TWeightNot=0 and All CofG are defined (Basic Calcs).csv" />
+                    <Button
+                        x:Name="Demo2"
+                        Clicked="Demo2_Clicked"
+                        Style="{StaticResource ButtonPickFile}"
+                        Text="Scenario 02 - TWeightNot=0 and not All CofG are defined.csv" />
+                    <Button
+                        x:Name="Demo3"
+                        Clicked="Demo3_Clicked"
+                        Style="{StaticResource ButtonPickFile}"
+                        Text="Scenario 03 - TWeighNot=0  and all CofG are not defined.csv" />
+                    <Button
+                        x:Name="Demo4"
+                        Clicked="Demo4_Clicked"
+                        Style="{StaticResource ButtonPickFile}"
+                        Text="Scenario 04 - TWeight=0  and all CofG are defined.csv" />
+                    <Button
+                        x:Name="Demo5"
+                        Clicked="Demo5_Clicked"
+                        Style="{StaticResource ButtonPickFile}"
+                        Text="Scenario 05 - TWeight=0  and not all CofG are defined.csv" />
+                    <Button
+                        x:Name="Demo6"
+                        Clicked="Demo6_Clicked"
+                        Style="{StaticResource ButtonPickFile}"
+                        Text="Scenario 06 - TWeight=0  and all CofG are not defined.csv" />
                 </VerticalStackLayout>
             </toolkit:Expander.Content>
         </toolkit:Expander>
 
 
-        <Label Text="DATA Grid Display"/>
+        <Label Text="DATA Grid Display" />
 
-        <datagrid:SfDataGrid x:Name="MPCItemsDaGr"
-                             SelectionMode="Single"
-                             MinimumHeightRequest="500"
-                             VerticalOptions="StartAndExpand"
-                             HorizontalScrollBarVisibility="Default"
-                             ItemsSource="{Binding massPropItemsCollection}">
-        </datagrid:SfDataGrid>
+        <datagrid:SfDataGrid
+            x:Name="MPCItemsDaGr"
+            BackgroundColor="LightSlateGrey"
+            Padding="0,10,10,10"
+            MinimumHeightRequest="500"
+            VerticalOptions="StartAndExpand"
+            HorizontalOptions="FillAndExpand"
+            HorizontalScrollBarVisibility="Default"
+            ItemsSource="{Binding massPropItemsCollection}"
+            SelectionMode="Single"
+            />
 
+        <Label Text="Totals" />
+        <Label Text="{Binding TotalWeight,StringFormat='{0:F2}'}"
+            BackgroundColor="Orchid"/>
+        
     </VerticalStackLayout>
+
+
 </ContentPage>

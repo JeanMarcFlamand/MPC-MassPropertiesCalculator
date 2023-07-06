@@ -12,7 +12,8 @@ namespace MPC_MassPropertiesCalculator_MAUIapp.ViewModels;
 public class MPCMassPropItemsViewModel : INotifyPropertyChanged
 {
     private ObservableCollection<MassPropItem> massPropItems;
-
+    //private ObservableCollection<MassPropTotal> massPropTotal;
+    MassPropTotal massPropTotal = new();
 
     //To reload the ItemsSource of the DataGrid i.e., massPropItemsCollection at the run time,
     //the ViewModel class has to be inherited from INotifyPropertyChanged interface.
@@ -28,6 +29,7 @@ public class MPCMassPropItemsViewModel : INotifyPropertyChanged
             NotifyPropertyChanged(nameof(massPropItemsCollection));
         }
     }
+    public double TotalWeight { get; set; }
 
     public event PropertyChangedEventHandler PropertyChanged;
     private void NotifyPropertyChanged(String propertyName)
@@ -55,5 +57,10 @@ public class MPCMassPropItemsViewModel : INotifyPropertyChanged
         // was  MPCItemsDaGr.ItemsSource = csv.GetRecords<MassPropItem>().ToList();
         // is now but not working
         massPropItemsCollection = csv.GetRecords<MassPropItem>().ToObservableCollection();
+        massPropTotal.GetMassPropTotal(massPropItemsCollection.ToList());
+        TotalWeight = (double)massPropTotal.TotalWeight;
+
+
+
     }
 }
