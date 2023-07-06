@@ -45,7 +45,11 @@ public class MPCMassPropItemsViewModel : INotifyPropertyChanged
     }
 
 
+<<<<<<< HEAD
     //TODO - use the GetMasspropertyRecords in lieu of   async Task LoadRecords(string filePath) from MPCDataGridView.xaml.cs
+=======
+    
+>>>>>>> test
     async public void GetMasspropertyRecords(string fileName)
     {
         char s = Path.DirectorySeparatorChar;
@@ -54,8 +58,12 @@ public class MPCMassPropItemsViewModel : INotifyPropertyChanged
         using StreamReader reader = new StreamReader(stream);
         using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
         
+<<<<<<< HEAD
         // was  MPCItemsDaGr.ItemsSource = csv.GetRecords<MassPropItem>().ToList();
         // is now but not working
+=======
+
+>>>>>>> test
         massPropItemsCollection = csv.GetRecords<MassPropItem>().ToObservableCollection();
         massPropTotal.GetMassPropTotal(massPropItemsCollection.ToList());
         TotalWeight = (double)massPropTotal.TotalWeight;
