@@ -45,7 +45,6 @@ public class MPCMassPropItemsViewModel : INotifyPropertyChanged
     }
 
 
-    
     async public void GetMasspropertyRecords(string fileName)
     {
         char s = Path.DirectorySeparatorChar;
@@ -54,12 +53,9 @@ public class MPCMassPropItemsViewModel : INotifyPropertyChanged
         using StreamReader reader = new StreamReader(stream);
         using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
         
-
         MassPropItemsCollection = csv.GetRecords<MassPropItem>().ToObservableCollection();
         massPropTotal.GetMassPropTotal(MassPropItemsCollection.ToList());
         TotalWeight = (double)massPropTotal.TotalWeight;
-
-
 
     }
 }
