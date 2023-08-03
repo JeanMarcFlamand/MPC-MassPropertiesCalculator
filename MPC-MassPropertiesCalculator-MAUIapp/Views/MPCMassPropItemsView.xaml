@@ -111,7 +111,7 @@
             VerticalOptions="StartAndExpand"
             HorizontalOptions="FillAndExpand"
             HorizontalScrollBarVisibility="Default"
-            ItemsSource="{Binding massPropItemsCollection}"
+            ItemsSource="{Binding MassPropItemsCollection}"
             SelectionMode="Single"
             />
 

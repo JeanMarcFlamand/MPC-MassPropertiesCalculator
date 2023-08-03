@@ -15,7 +15,7 @@ public partial class MPCMassPropItemsView : ContentPage
         SfDataGrid MPCItemsDaGr = new();
 
         MPCMassPropItemsViewModel viewModel = new();
-        MPCItemsDaGr.ItemsSource = viewModel.massPropItemsCollection;
+        MPCItemsDaGr.ItemsSource = viewModel.MassPropItemsCollection;
 
     }
 

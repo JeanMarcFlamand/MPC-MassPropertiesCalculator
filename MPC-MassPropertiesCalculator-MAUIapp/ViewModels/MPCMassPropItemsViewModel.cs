@@ -20,13 +20,13 @@ public class MPCMassPropItemsViewModel : INotifyPropertyChanged
     //This allows the DataGrid to be automatically updated when the data in the massPropItemsCollection changes.
     //In this case, the ItemsSource of the DataGrid is bound to the massPropItemsCollection property,
     //which means that when the collection is updated, the DataGrid will be updated with the new data as well.
-    public ObservableCollection<MassPropItem> massPropItemsCollection
+    public ObservableCollection<MassPropItem> MassPropItemsCollection
     {
         get { return massPropItems; ; }
         set
         {
             massPropItems = value;
-            NotifyPropertyChanged(nameof(massPropItemsCollection));
+            NotifyPropertyChanged(nameof(MassPropItemsCollection));
         }
     }
     public double TotalWeight { get; set; }
@@ -53,8 +53,8 @@ public class MPCMassPropItemsViewModel : INotifyPropertyChanged
         using StreamReader reader = new StreamReader(stream);
         using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
         
-        massPropItemsCollection = csv.GetRecords<MassPropItem>().ToObservableCollection();
-        massPropTotal.GetMassPropTotal(massPropItemsCollection.ToList());
+        MassPropItemsCollection = csv.GetRecords<MassPropItem>().ToObservableCollection();
+        massPropTotal.GetMassPropTotal(MassPropItemsCollection.ToList());
         TotalWeight = (double)massPropTotal.TotalWeight;
 
 
